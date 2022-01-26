@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Vehicle Service Tracker</string>
+    <string name="add_text">Add</string>
+    <string name="hintYear">Year</string>
+    <string name="hintMake">Make</string>
+    <string name="hintModel">Model</string>
 </resources>
