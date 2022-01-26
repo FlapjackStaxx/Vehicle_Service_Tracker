@@ -9,61 +9,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
 
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:id="@+id/listLv"
-                android:layout_marginBottom="30dp">
-            </ListView>
+        <ListView
+            android:id="@+id/listLv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="30dp"></ListView>
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Vehicle"
-            android:textSize="28sp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
+            android:text="Add Vehicle"
             android:textColor="@color/black"
-            android:layout_marginTop="16dp">
-        </TextView>
+            android:textSize="28sp"></TextView>
 
         <EditText
+            android:id="@+id/yearEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:hint="Year"
-            android:inputType="number"
-            android:layout_marginTop="4dp"
-            android:id="@+id/yearEt">
-        </EditText>
+            android:inputType="number"></EditText>
+
         <EditText
+            android:id="@+id/makeEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:hint="Make"
-            android:inputType="text"
-            android:layout_marginTop="4dp"
-            android:id="@+id/makeEt">
-        </EditText>
+            android:inputType="text"></EditText>
+
         <EditText
+            android:id="@+id/modelEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Model"
-            android:inputType="text"
             android:layout_marginTop="4dp"
-            android:id="@+id/modelEt">
-        </EditText>
+            android:hint="Model"
+            android:inputType="text"></EditText>
 
         <Button
+            android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"
-            android:id="@+id/addButton"
             android:layout_gravity="center"
-            android:layout_marginTop="4dp">
-        </Button>
+            android:layout_marginTop="4dp"
+            android:text="Add"></Button>
     </LinearLayout>
 
 
