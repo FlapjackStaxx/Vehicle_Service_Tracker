@@ -1,19 +1,15 @@
 package com.staxxproducts.vehicleservicetracker
 
 import android.content.Context
-
 import android.os.Bundle
 import android.view.WindowManager
-
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-/*
-    TO DO LIST!!!
----Clean Up Code!
----Fix "nothing found" staying on new list - second entry
- */
 
-class AddVehicle: AppCompatActivity() {
+class ExistingVehicle: AppCompatActivity() {
 
 
     //Declare variables
@@ -24,13 +20,13 @@ class AddVehicle: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.add_vehicle)
+        setContentView(R.layout.existing_vehicle)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
 
         //Declare variables
         val addButton = findViewById<Button>(R.id.addButton)
-        val sharedPref = getSharedPreferences(prefName,Context.MODE_PRIVATE)
-        val listLv = findViewById<ListView>(R.id.listLv)
+        val sharedPref = getSharedPreferences(prefName, Context.MODE_PRIVATE)
+        val listLv = findViewById<ListView>(R.id.listExistingLv)
         val editor = sharedPref.edit()
         val counter = sharedPref.getInt("COUNT",0)
 
@@ -57,10 +53,10 @@ class AddVehicle: AppCompatActivity() {
         }
 
 
-       listLv.adapter = adapter
+        listLv.adapter = adapter
 
 
-       addButton.setOnClickListener {
+        listLv.setOnClickListener {
 
             val yearEt = findViewById<EditText>(R.id.yearEt)
             val makeEt = findViewById<EditText>(R.id.makeEt)
@@ -85,11 +81,11 @@ class AddVehicle: AppCompatActivity() {
 
 
 
-    //Reloads the ListView element
-    //Only way to make notifyDataSetChanged work with the ArrayList
+        //Reloads the ListView element
+        //Only way to make notifyDataSetChanged work with the ArrayList
     }
     private fun loadPreferences(){
-        val data = getSharedPreferences(prefName,Context.MODE_PRIVATE)
+        val data = getSharedPreferences(prefName, Context.MODE_PRIVATE)
         var dataSet = data.getString("YEAR$start", "None Available")
         dataSet += " "+ data.getString("MAKE$start", null)
         dataSet += " "+ data.getString("MODEL$start", null)
