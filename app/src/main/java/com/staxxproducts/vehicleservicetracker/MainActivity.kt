@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val addButton = findViewById<Button>(R.id.addButton)
 
         addButton.setOnClickListener {
-            val intent = Intent(this, AddVehicle::class.java)
+            val intent = Intent(this, ExistingVehicle::class.java)
             startActivity(intent)
 
         }
