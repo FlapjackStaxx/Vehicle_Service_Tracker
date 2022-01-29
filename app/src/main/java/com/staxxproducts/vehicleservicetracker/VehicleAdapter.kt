@@ -21,7 +21,7 @@ class VehicleAdapter(exampleList: ArrayList<VehicleItem>) :
         viewType: Int
     ): ExampleViewHolder {
         val v =
-            LayoutInflater.from(parent.context).inflate(R.layout.example_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.vehicle_item, parent, false)
         return ExampleViewHolder(v)
     }
 

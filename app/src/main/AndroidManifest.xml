@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".AddVehicle"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".ExistingVehicle"/>
         <activity android:name=".About"/>
         <activity android:name=".AddRecord"/>
