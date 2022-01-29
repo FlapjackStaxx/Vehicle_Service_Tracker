@@ -14,17 +14,15 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".AddVehicle"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
-
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".ExistingVehicle"/>
+        <activity android:name=".About"/>
+        <activity android:name=".AddRecord"/>
     </application>
 
 </manifest>

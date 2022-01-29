@@ -3,10 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/drawable/tv_outline.xml" value="0.68" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/about_screen.xml" value="0.536" />
         <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/activity_main.xml" value="0.37777777777777777" />
-        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/add_vehicle.xml" value="0.35555555555555557" />
-        <entry key="..\:/Users/Stephen/StudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/add_record.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Stephen/StudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/existing_vehicle.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/activity_main1.xml" value="0.27870370370370373" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/add_record.xml" value="0.536" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/add_vehicle.xml" value="0.1" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/example_item.xml" value="0.27870370370370373" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/existing_vehicle.xml" value="0.40208333333333335" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/newaddvehicle.xml" value="0.4" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/old_add_vehicle.xml" value="0.4140625" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/oldaddvehicle.xml" value="0.40208333333333335" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/test.xml" value="0.25" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/vehicle_item.xml" value="0.27870370370370373" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/working_old_add_vehicle.xml" value="0.27870370370370373" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/working_old_existing_vehicle.xml" value="0.27870370370370373" />
       </map>
     </option>
   </component>

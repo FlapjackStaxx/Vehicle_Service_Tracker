@@ -38,7 +38,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:text="@string/hintMake"
+        android:hint="@string/hintMake"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:text="@string/hintModel"
+        android:hint="@string/hintModel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/makeEt" />
