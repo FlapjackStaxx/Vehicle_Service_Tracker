@@ -18,7 +18,9 @@
             android:text="Line 1"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true" />
 
 
     </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.staxxproducts.vehicleservicetracker
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -62,6 +63,8 @@ class AddVehicle: AppCompatActivity() {
         val json: String = gson.toJson(mVehicleList)
         editor.putString("vehicle list", json)
         editor.apply()
+        val intent = Intent(this, ExistingVehicle::class.java)
+        startActivity(intent)
     }
 
     private fun loadData() {
