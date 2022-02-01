@@ -23,6 +23,8 @@ class  ExistingVehicle: AppCompatActivity() {
     var passMd: String = ""
     var passId: Int = 0
     var mVehicleList: ArrayList<VehicleItem>? = null
+    private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
+    private var mServiceList: ArrayList<Service>? = null
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: VehicleAdapter? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null
@@ -48,7 +50,7 @@ class  ExistingVehicle: AppCompatActivity() {
 
                 val intent1 = Intent(this@ExistingVehicle, AddRecord::class.java)
                 passId = position
-                intent1.putExtra("Id",passId)
+                intent1.putExtra("CarID",passId)
                 intent1.putExtra("Year",passYr)
                 intent1.putExtra("Make",passMk)
                 intent1.putExtra("Model",passMd)
@@ -65,19 +67,20 @@ class  ExistingVehicle: AppCompatActivity() {
 
 
 
-
-
-
-
     private fun loadData() {
 
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
         val gson = Gson()
         val json = sharedPreferences.getString("vehicle list", null)
-        val type: Type = object : TypeToken<ArrayList<VehicleItem?>?>() {}.type
-        mVehicleList = gson.fromJson(json, type)
-        if (mVehicleList == null) {
-            mVehicleList = ArrayList()
+        val type: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
+
+        mVehicleList1 = gson.fromJson(json, type)
+        if (mVehicleList1 == null) {
+            mVehicleList1 = ArrayList()
+        }
+
+        if (mServiceList == null) {
+            mServiceList = ArrayList()
         }
     }
 
@@ -85,7 +88,7 @@ class  ExistingVehicle: AppCompatActivity() {
         mRecyclerView = findViewById(R.id.recyclerview)
         mRecyclerView?.setHasFixedSize(true)
         mLayoutManager = LinearLayoutManager(this)
-        mAdapter = VehicleAdapter(mVehicleList!!)
+        mAdapter = VehicleAdapter(mVehicleList1!!)
         mRecyclerView?.layoutManager = mLayoutManager
         mRecyclerView?.adapter = mAdapter
     }
