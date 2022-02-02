@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
-import org.json.JSONObject
 import java.lang.reflect.Type
 
 
@@ -22,7 +21,6 @@ class  ExistingVehicle: AppCompatActivity() {
     var passMk: String = ""
     var passMd: String = ""
     var passId: Int = 0
-    var mVehicleList: ArrayList<VehicleItem>? = null
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
     private var mServiceList: ArrayList<Service>? = null
     private var mRecyclerView: RecyclerView? = null
@@ -33,34 +31,37 @@ class  ExistingVehicle: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.existing_vehicle)
+
+
         loadData()
         buildRecyclerView()
 
         val backButton = findViewById<Button>(R.id.existGoBack)
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent) }
 
-             mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListenr(this, mRecyclerView!!, object : RecyclerItemClickListenr.OnItemClickListener {
+            startActivity(intent)
+        }
 
-            override fun onItemClick(view: View, position: Int) {
-                Toast.makeText(this@ExistingVehicle,"You clicked $position",Toast.LENGTH_SHORT).show()
-                getLine(position)
-                Log.i(TAG, "getLine: $finalStr")
+        mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListenr(this, mRecyclerView!!, object : RecyclerItemClickListenr.OnItemClickListener {
 
-                val intent1 = Intent(this@ExistingVehicle, AddRecord::class.java)
-                passId = position
-                intent1.putExtra("CarID",passId)
-                intent1.putExtra("Year",passYr)
-                intent1.putExtra("Make",passMk)
-                intent1.putExtra("Model",passMd)
-                startActivity(intent1)
-            }
+        override fun onItemClick(view: View, position: Int) {
+            Toast.makeText(this@ExistingVehicle,"You clicked $position",Toast.LENGTH_SHORT).show()
+            getLine(position)
 
-           // override fun onItemLongClick(view: View?, position: Int) {
-        //        TODO("do nothing")
-       //     }
-        }))
+
+            Log.i(TAG, "getLine: $finalStr")
+
+            val intent1 = Intent(this@ExistingVehicle, AddRecord::class.java)
+            passId = position
+            intent1.putExtra("CarID",passId)
+            intent1.putExtra("Year",passYr)
+            intent1.putExtra("Make",passMk)
+            intent1.putExtra("Model",passMd)
+            startActivity(intent1)
+        }
+
+     }))
 
     }
 
@@ -93,17 +94,16 @@ class  ExistingVehicle: AppCompatActivity() {
         mRecyclerView?.adapter = mAdapter
     }
 
-    //Returns a string of the specific TextView clicked inside of the RecyclerView linked to the vehicle list
-
+    // Returns a string of the specific TextView clicked inside of the RecyclerView linked to the vehicle list
     fun getLine(it: Int){
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
         val json = sharedPreferences.getString("vehicle list", null)
         val jsonArray = JSONArray(json)
         val jsonObject = jsonArray.getJSONObject(it)
 
-        val yearStr: String = jsonObject.getString("year")
-        val makeStr: String = jsonObject.getString("make")
-        val modelStr: String = jsonObject.getString("model")
+        val yearStr: String = jsonObject.getString("Year")
+        val makeStr: String = jsonObject.getString("Make")
+        val modelStr: String = jsonObject.getString("Model")
 
         passYr = yearStr
         passMk = makeStr

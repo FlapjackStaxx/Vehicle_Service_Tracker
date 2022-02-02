@@ -1,9 +1,8 @@
 package com.staxxproducts.vehicleservicetracker
 
 data class VehicleServiceItem(
-    val CarID: String,
+    val Year: String,
     val Make: String,
     val Model: String,
-    val Services: ArrayList<Service>,
-    val Year: String
+    val Services: ArrayList<Service>
 )
