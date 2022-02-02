@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/activity_main.xml" value="0.37777777777777777" />
         <entry key="..\:/Users/Stephen/AndroidStudioProjects/VehicleServiceTracker/app/src/main/res/layout/add_vehicle.xml" value="0.35555555555555557" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/about_screen.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/activity_main1.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/Stephen/AndroidStudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/add_record.xml" value="0.536" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/existing_vehicle.xml" value="0.40208333333333335" />
+        <entry key="..\:/Users/Stephen/AndroidStudioProjects/Vehicle_Service_Tracker/app/src/main/res/layout/view_services.xml" value="0.40208333333333335" />
       </map>
     </option>
   </component>

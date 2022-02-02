@@ -23,6 +23,7 @@
         <activity android:name=".ExistingVehicle"/>
         <activity android:name=".About"/>
         <activity android:name=".AddRecord"/>
+        <activity android:name=".ViewServices"/>
     </application>
 
 </manifest>

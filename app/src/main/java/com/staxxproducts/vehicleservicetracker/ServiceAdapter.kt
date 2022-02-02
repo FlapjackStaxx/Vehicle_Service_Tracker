@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class WORKINGOLDVehicleAdapter (exampleList: ArrayList<VehicleItem>) :
-    RecyclerView.Adapter<WORKINGOLDVehicleAdapter.ExampleViewHolder>() {
-    private val mVehicleList: ArrayList<VehicleItem> = exampleList
+class ServiceAdapter (servicesList: ArrayList<Service>) :
+    RecyclerView.Adapter<ServiceAdapter.ExampleViewHolder>() {
+    private val mServiceItem: ArrayList<Service> = servicesList
 
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var mTextViewLine1: TextView = itemView.findViewById(R.id.textview_line1)
@@ -32,15 +32,15 @@ class WORKINGOLDVehicleAdapter (exampleList: ArrayList<VehicleItem>) :
     }
 
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
-        val currentItem: VehicleItem = mVehicleList[position]
-        (currentItem.year + " " + currentItem.make + " " + currentItem.model).also { holder.mTextViewLine1.text = it }
+        val currentItem: Service = mServiceItem[position]
+        (currentItem.date + " " + currentItem.mileage + " " + currentItem.typeofservice).also { holder.mTextViewLine1.text = it }
 
 
 
     }
 
     override fun getItemCount(): Int {
-        return mVehicleList.size
+        return mServiceItem.size
     }
 
 

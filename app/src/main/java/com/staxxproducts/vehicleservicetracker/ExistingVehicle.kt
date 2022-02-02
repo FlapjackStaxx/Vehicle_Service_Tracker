@@ -27,6 +27,8 @@ class  ExistingVehicle: AppCompatActivity() {
     private var mAdapter: VehicleAdapter? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null
     private val TAG = "MyActivity"
+    private var recLength: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class  ExistingVehicle: AppCompatActivity() {
 
         loadData()
         buildRecyclerView()
+
 
         val backButton = findViewById<Button>(R.id.existGoBack)
         backButton.setOnClickListener {
@@ -48,12 +51,14 @@ class  ExistingVehicle: AppCompatActivity() {
         override fun onItemClick(view: View, position: Int) {
             Toast.makeText(this@ExistingVehicle,"You clicked $position",Toast.LENGTH_SHORT).show()
             getLine(position)
+            checkRecordLength(position)
 
 
             Log.i(TAG, "getLine: $finalStr")
 
-            val intent1 = Intent(this@ExistingVehicle, AddRecord::class.java)
+            val intent1 = Intent(this@ExistingVehicle, ViewServices::class.java)
             passId = position
+            intent1.putExtra("ServiceLength",recLength)
             intent1.putExtra("CarID",passId)
             intent1.putExtra("Year",passYr)
             intent1.putExtra("Make",passMk)
@@ -109,6 +114,19 @@ class  ExistingVehicle: AppCompatActivity() {
         passMk = makeStr
         passMd = modelStr
         finalStr = ("$yearStr $makeStr $modelStr")
+
+    }
+
+    private fun checkRecordLength(position: Int) {
+        val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
+        val gson = Gson()
+        val json = sharedPreferences.getString("vehicle list", null)
+        val jsonArray = JSONArray(json)
+        val jsonServices = jsonArray.getJSONObject(position).getJSONArray("Services")
+        recLength = jsonServices.length()
+
+
+        Log.i("Service Record # ",recLength.toString())
 
     }
 

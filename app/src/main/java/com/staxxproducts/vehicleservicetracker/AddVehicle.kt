@@ -51,9 +51,9 @@ class AddVehicle: AppCompatActivity() {
         val model = findViewById<EditText>(R.id.modelEt)
 
         val date = ""
-        val mileage = " "
-        val servicenotes = " "
-        val typeofservice = " "
+        val mileage = ""
+        val servicenotes = ""
+        val typeofservice = ""
         mServiceList!!.add(Service(date,mileage,servicenotes,typeofservice))
 
         insertItem(year.selectedItem.toString(), make.text.toString(), model.text.toString(), mServiceList!!)

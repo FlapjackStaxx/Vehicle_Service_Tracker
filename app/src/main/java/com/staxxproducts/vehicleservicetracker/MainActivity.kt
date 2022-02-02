@@ -18,18 +18,16 @@ open class MainActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             val intent = Intent(this, AddVehicle::class.java)
             startActivity(intent)
-
         }
 
         existButton.setOnClickListener {
             val intent = Intent(this, ExistingVehicle::class.java)
             startActivity(intent)
-
         }
+
         aboutButton.setOnClickListener {
             val intent = Intent(this, About::class.java)
             startActivity(intent)
-
         }
 
 

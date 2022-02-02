@@ -12,7 +12,6 @@
     <string name="goBackBtn">Go Back</string>
     <string name="aboutBtn">About This App</string>
     <string name="spinYear">Select Vehicle Year</string>
-    <string name="calBtn">Click To Select Date</string>
     <string name="chooseDate">Date Of Service</string>
     <string name="svcType">Type Of Service</string>
     <string name="mileage">Current Mileage</string>
