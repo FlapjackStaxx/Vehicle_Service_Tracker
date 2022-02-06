@@ -34,7 +34,7 @@ class ViewServices: AppCompatActivity() {
         setContentView(R.layout.view_services)
 
 
-        val notesText = findViewById<TextView>(R.id.svcNotesTv)
+        var notesText = findViewById<TextView>(R.id.svcNotesTv)
 
         svcId = intent.getIntExtra("ServiceID",0)
        vId = intent.getIntExtra("CarID",0)
@@ -118,11 +118,11 @@ class ViewServices: AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
         val json = sharedPreferences.getString("vehicle list", null)
         val jsonArray = JSONArray(json)
-        val jsonServices = jsonArray.getJSONObject(it).getJSONArray("Services")
+        val jsonServices = jsonArray.getJSONObject(vId).getJSONArray("Services")
 
 
 
-        val notesSvcEntry: String = jsonServices.getJSONObject(0).getString("servicenotes")
+        val notesSvcEntry: String = jsonServices.getJSONObject(it).getString("servicenotes")
 
 
         finalStr = ("$notesSvcEntry")

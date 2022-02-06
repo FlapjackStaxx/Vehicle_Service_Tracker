@@ -63,7 +63,7 @@ class AddRecord: MainActivity() {
 
 
             addRecord()
-            val intent = Intent(this, ViewServices::class.java)
+            val intent = Intent(this, ExistingVehicle::class.java)
 
             intent.putExtra("ServiceID",listLength)
 
@@ -75,23 +75,6 @@ class AddRecord: MainActivity() {
 
 
     private fun addRecord() {
-/*
-        val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
-        val gson = Gson()
-        val json = sharedPreferences.getString("vehicle list", null)
-        val jsonArray = JSONArray(json)
-        val jsonServices = jsonArray.getJSONObject(vId).getJSONArray("Services")
-        val editor = sharedPreferences.edit()
-
-
-        // Collect information from the parsed array. Data was in object inside of an array "Services" inside of an object which was inside of the master array.
-        val dateEntry: String = jsonServices.getJSONObject(0).getString("date")
-        val mileEntry: String = jsonServices.getJSONObject(0).getString("mileage")
-        val typeSvcEntry: String = jsonServices.getJSONObject(0).getString("typeofservice")
-        val notesSvcEntry: String = jsonServices.getJSONObject(0).getString("servicenotes")
-
-
-*/
 
         // Prepare the input fields to receive data from the user
         val svcDateP = findViewById<DatePicker>(R.id.svcDateP)
@@ -121,36 +104,6 @@ class AddRecord: MainActivity() {
         editor.putString("vehicle list", json)
         editor.apply()
     }
-/*
-
-            // Removed the key:value pairs from the "Services" array to prepare for new form data
-           jsonServices.getJSONObject(svcEntryNum).remove("date")
-            jsonServices.getJSONObject(svcEntryNum).remove("mileage")
-            jsonServices.getJSONObject(svcEntryNum).remove("typeofservice")
-            jsonServices.getJSONObject(svcEntryNum).remove("servicenotes")
-
-        // Assign new key:value pairs from the form data
-        jsonServices.getJSONObject(svcEntryNum).putOpt("date",svcDate)
-        jsonServices.getJSONObject(svcEntryNum).putOpt("mileage",svcMile)
-        jsonServices.getJSONObject(svcEntryNum).putOpt("typeofservice",svcType)
-        jsonServices.getJSONObject(svcEntryNum).putOpt("servicenotes",svcNotes)
-
-        //Create new output string and send it off to the sharedpreferences file
-        val outNew: String = jsonArray.toString()
-        editor.clear()
-        editor.putString("vehicle list", outNew)
-        editor.apply()
-*/
-
-
-
-
-        /*
-        // General output logging for debugging purposes
-        Log.i("Old Info: ", "Date: $dateEntry Mileage: $mileEntry Service Type: $typeSvcEntry Service Notes: $svcNotesEntry")
-        Log.i("New Info: ", "Date: $svcDate Mileage: $svcMile Service Type: $svcType Service Notes: $svcNotes")
-        */
-
 
 
 
