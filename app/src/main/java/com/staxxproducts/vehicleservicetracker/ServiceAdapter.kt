@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class ServiceAdapter (servicesList: ArrayList<Service>) :
-    RecyclerView.Adapter<ServiceAdapter.ExampleViewHolder>() {
+    RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
     private val mServiceItem: ArrayList<Service> = servicesList
 
-    class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var mTextViewLine1: TextView = itemView.findViewById(R.id.textview_line1)
+    class ServiceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var mServiceTextView: TextView = itemView.findViewById(R.id.textview_line1)
 
 
     }
@@ -23,17 +23,17 @@ class ServiceAdapter (servicesList: ArrayList<Service>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ExampleViewHolder {
+    ): ServiceViewHolder {
         val v =
             LayoutInflater.from(parent.context).inflate(R.layout.vehicle_item, parent, false)
-        return ExampleViewHolder(v)
+        return ServiceViewHolder(v)
 
 
     }
 
-    override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val currentItem: Service = mServiceItem[position]
-        (currentItem.date + " " + currentItem.mileage + " " + currentItem.typeofservice).also { holder.mTextViewLine1.text = it }
+        (currentItem.date + " " + currentItem.mileage + " " + currentItem.typeOfService).also { holder.mServiceTextView.text = it }
 
 
 

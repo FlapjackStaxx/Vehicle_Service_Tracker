@@ -24,6 +24,7 @@
         <activity android:name=".About"/>
         <activity android:name=".AddRecord"/>
         <activity android:name=".ViewServices"/>
+        <activity android:name=".AdminActivities"/>
     </application>
 
 </manifest>

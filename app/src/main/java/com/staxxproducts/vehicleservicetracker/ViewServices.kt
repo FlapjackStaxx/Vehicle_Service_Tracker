@@ -16,46 +16,51 @@ import java.lang.reflect.Type
 
 class ViewServices: AppCompatActivity() {
 
+    // Initializes Variables
     var finalStr: String = ""
-    var passYr: String = ""
-    var passMk: String = ""
-    var passMd: String = ""
     var svcId: Int = 0
-    var vId: Int=0
+    var vId: Int = 0
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
     private var mServiceList: ArrayList<Service>? = null
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: ServiceAdapter? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null
-    private val TAG = "MyActivity"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.view_services)
 
+        // Sets up the notes section for services
+        val notesText = findViewById<TextView>(R.id.svcNotesTv)
 
-        var notesText = findViewById<TextView>(R.id.svcNotesTv)
-
+        // Collects the serviceID number, the vehicle ID number, year, make, and model from previous screen's intent's passing
         svcId = intent.getIntExtra("ServiceID",0)
-       vId = intent.getIntExtra("CarID",0)
-       var vYr = intent.getStringExtra("Year").toString()
-       var vMk = intent.getStringExtra("Make").toString()
-       var vMd = intent.getStringExtra("Model").toString()
+        vId = intent.getIntExtra("CarID",0)
+        val vYr = intent.getStringExtra("Year").toString()
+        val vMk = intent.getStringExtra("Make").toString()
+        val vMd = intent.getStringExtra("Model").toString()
 
 
+        // Runs loadData to populate the list of services
         loadData()
+
+        // Populates the recycler view with the list of services
         buildRecyclerView()
 
+        // Initializes back button to send user back to Existing Vehicle list
         val backButton = findViewById<Button>(R.id.svcRecGoBackBtn)
         backButton.setOnClickListener {
             val intent = Intent(this, ExistingVehicle::class.java)
-
             startActivity(intent)
         }
 
+        // Initializes add button to send vehicle ID, year, make, and model to the AddRecord screen
         val addRecordBtn = findViewById<Button>(R.id.addNewRecBtn)
         addRecordBtn.setOnClickListener {
             val intent = Intent(this, AddRecord::class.java)
+
+            // Passes vehicle data to next screen
             intent.putExtra("CarID",vId)
             intent.putExtra("Year",vYr)
             intent.putExtra("Make",vMk)
@@ -63,17 +68,17 @@ class ViewServices: AppCompatActivity() {
             startActivity(intent)
         }
 
-        mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListenr(this, mRecyclerView!!, object : RecyclerItemClickListenr.OnItemClickListener {
+        // Sets the touch listener for the recycler view of services to send vehicle notes to the TextView
+        mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListener(this, object : RecyclerItemClickListener.OnItemClickListener {
 
             override fun onItemClick(view: View, position: Int) {
                 Toast.makeText(this@ViewServices,"You clicked $position",Toast.LENGTH_SHORT).show()
+
+                // Gets the position of the service item clicked and populates the TextView with that items notes
                 getLine(position)
                 notesText.text=finalStr
 
-
-
             }
-
         }))
 
     }
@@ -86,15 +91,14 @@ class ViewServices: AppCompatActivity() {
         val json = sharedPreferences.getString("vehicle list", null)
         val jsonArray = JSONArray(json)
         val jsonServices = jsonArray.getJSONObject(vId).getJSONArray("Services").toString()
-
         val gson = Gson()
 
-        val type: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
-        val type1: Type = object : TypeToken<ArrayList<Service?>?>() {}.type
+        val vehicleInfo: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
+        val serviceInfo: Type = object : TypeToken<ArrayList<Service?>?>() {}.type
 
 
-        mServiceList = gson.fromJson(jsonServices, type1)
-        mVehicleList1 = gson.fromJson(json, type)
+        mServiceList = gson.fromJson(jsonServices, serviceInfo)
+        mVehicleList1 = gson.fromJson(json, vehicleInfo)
         if (mVehicleList1 == null) {
             mVehicleList1 = ArrayList()
         }
@@ -121,11 +125,8 @@ class ViewServices: AppCompatActivity() {
         val jsonServices = jsonArray.getJSONObject(vId).getJSONArray("Services")
 
 
-
         val notesSvcEntry: String = jsonServices.getJSONObject(it).getString("servicenotes")
-
-
-        finalStr = ("$notesSvcEntry")
+        finalStr = (notesSvcEntry)
 
     }
 

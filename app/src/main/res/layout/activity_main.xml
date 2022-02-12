@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/textView3"
@@ -44,9 +45,11 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:text="@string/exist_v_text"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@id/abtButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/teal_700"/>
 
     <Button
         android:id="@+id/addVehButton"
@@ -54,19 +57,34 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:text="@string/add_v_text"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/existingButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/teal_700"/>
 
     <Button
         android:id="@+id/abtButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="@string/aboutBtn"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteY="688dp" />
+        tools:layout_editor_absoluteY="688dp"
+        android:backgroundTint="@color/teal_700"/>
+
+    <TextView
+        android:id="@+id/mainVersionNumTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="@string/versionNum"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

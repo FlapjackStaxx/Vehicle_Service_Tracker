@@ -13,7 +13,7 @@
         android:layout_marginTop="2dp"
         android:duplicateParentState="false"
         android:gravity="center|top"
-        android:text="@string/aboutTitle"
+        android:text="@string/admin"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,49 +24,23 @@
         android:id="@+id/goBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/teal_700"
         android:text="@string/goBackBtn"
-        android:layout_marginBottom="10dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/adminBtn"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/aboutTv"
-        android:layout_width="347dp"
-        android:layout_height="448dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="30dp"
-        android:gravity="center"
-        android:text="@string/aboutAppTxt"
-        app:layout_constraintBottom_toTopOf="@+id/versionTv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/versionTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="@string/versionNum"
-        app:layout_constraintBottom_toTopOf="@+id/goBackBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/adminBtn"
+        android:id="@+id/eraseListBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/admin"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/teal_700"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:text="@string/eraseList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/goBackBtn" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,6 @@ class AddRecord: MainActivity() {
     private var vMk: String = ""
     private var vMd: String = ""
     private var vId: Int = 0
-    private val TAG: String = "Vehicle Info: "
     private var svcDate: String = ""
     private var svcMile: String = ""
     private var svcType: String = ""
@@ -38,10 +37,10 @@ class AddRecord: MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_record)
 
+        // Runs loadData to populate the list of services
         loadData()
 
-         val TAG = "MyActivity"
-
+        // Initializes Button and TextView
         val svcAddBtn = findViewById<Button>(R.id.addSvcBtn)
         val vehInfo = findViewById<TextView>(R.id.vehicleInfoTv)
 
@@ -50,23 +49,21 @@ class AddRecord: MainActivity() {
         vYr = intent.getStringExtra("Year").toString()
         vMk = intent.getStringExtra("Make").toString()
         vMd = intent.getStringExtra("Model").toString()
-         listLength= intent.getIntExtra("ServiceLength",0)
+        listLength= intent.getIntExtra("ServiceLength",0)
 
+        // Returns the number of service records for vehicleID (vId)
         checkRecordLength(vId)
 
+        // Sets the info TextView to year make and model for the vehicle
         val finalStr: String = ("$vYr $vMk $vMd")
-        Log.i(TAG, " $finalStr")
         vehInfo.text = finalStr
 
-
+        // Runs processes to add a new record when Add Button is clicked then sends user back to list of vehicles when done
         svcAddBtn.setOnClickListener {
-
-
             addRecord()
+
             val intent = Intent(this, ExistingVehicle::class.java)
-
             intent.putExtra("ServiceID",listLength)
-
             startActivity(intent)
         }
     }
@@ -87,16 +84,19 @@ class AddRecord: MainActivity() {
         svcMile = mileageEt.text.toString()
         svcType = svcTypeEt.text.toString()
         svcNotes = svcNotesEt.text.toString()
+
+        // If the list of services is empty it sets the first record rather than adds to the list
         if (mServiceList!!.isEmpty()) {
-            mServiceList!!.set(recLength-1,Service(svcDate, svcMile, svcNotes, svcType))
+            mServiceList!![recLength-1] = Service(svcDate, svcMile, svcNotes, svcType)
         }
         else {
             mServiceList!!.add(recLength, Service(svcDate, svcMile, svcNotes, svcType))
         }
 
-       // mServiceList!!.add(recLength-1,Service(svcDate, svcMile, svcNotes, svcType))
+        // mServiceList!!.add(recLength-1,Service(svcDate, svcMile, svcNotes, svcType))
         insertItem(vYr,vMk,vMd, mServiceList!!)
 
+        // Calls up a fresh instance of shared preferences and adds the record to it
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         val gson = Gson()
@@ -107,18 +107,17 @@ class AddRecord: MainActivity() {
 
 
 
-
+    // Inserts a new service item to the vehicle list at position vId
      private fun insertItem(Year: String, Make: String, Model: String, mServiceList: ArrayList<Service>) {
          mVehicleList1!![vId] = (VehicleServiceItem(Year,Make,Model,mServiceList))
     }
 
-
+    // Populates the list of vehicles and their services for display
     private fun loadData() {
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
         val json = sharedPreferences.getString("vehicle list", null)
         val jsonArray = JSONArray(json)
         val jsonServices = jsonArray.getJSONObject(vId).getJSONArray("Services").toString()
-
         val gson = Gson()
 
         val type: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
@@ -127,6 +126,7 @@ class AddRecord: MainActivity() {
 
         mServiceList = gson.fromJson(jsonServices, type1)
         mVehicleList1 = gson.fromJson(json, type)
+
         if (mVehicleList1 == null) {
             mVehicleList1 = ArrayList()
         }
@@ -138,14 +138,11 @@ class AddRecord: MainActivity() {
 
     private fun checkRecordLength(position: Int) {
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
-        val gson = Gson()
         val json = sharedPreferences.getString("vehicle list", null)
         val jsonArray = JSONArray(json)
         val jsonServices = jsonArray.getJSONObject(position).getJSONArray("Services")
         recLength = jsonServices.length()
 
-
-        Log.i("Service Record # ",recLength.toString())
 
     }
 }

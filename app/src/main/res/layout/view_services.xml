@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -29,8 +30,9 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="30dp"
         android:gravity="center_vertical|center_horizontal"
-        android:hint="Click A Service Record To View Notes"
+        android:hint="@string/clickForInfo"
         android:textSize="14sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/svcRecGoBackBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -39,21 +41,25 @@
         android:id="@+id/svcRecGoBackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginBottom="10dp"
         android:text="@string/goBackBtn"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/teal_700"/>
 
     <Button
         android:id="@+id/addNewRecBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
         android:text="@string/add_record"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/teal_700"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

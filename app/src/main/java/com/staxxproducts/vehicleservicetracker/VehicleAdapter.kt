@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class VehicleAdapter (exampleList1: ArrayList<VehicleServiceItem>) :
-    RecyclerView.Adapter<VehicleAdapter.ExampleViewHolder>() {
-    private val mVehicleList: ArrayList<VehicleServiceItem> = exampleList1
+class VehicleAdapter (vehicleList: ArrayList<VehicleServiceItem>) :
+    RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>() {
+    private val mVehicleList: ArrayList<VehicleServiceItem> = vehicleList
 
-    class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var mTextViewLine1: TextView = itemView.findViewById(R.id.textview_line1)
+    class VehicleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var mVehicleTextView: TextView = itemView.findViewById(R.id.textview_line1)
 
 
     }
@@ -23,17 +23,17 @@ class VehicleAdapter (exampleList1: ArrayList<VehicleServiceItem>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ExampleViewHolder {
+    ): VehicleViewHolder {
         val v =
             LayoutInflater.from(parent.context).inflate(R.layout.vehicle_item, parent, false)
-        return ExampleViewHolder(v)
+        return VehicleViewHolder(v)
 
 
     }
 
-    override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
         val currentItem: VehicleServiceItem = mVehicleList[position]
-        (currentItem.Year + " " + currentItem.Make + " " + currentItem.Model).also { holder.mTextViewLine1.text = it }
+        (currentItem.Year + " " + currentItem.Make + " " + currentItem.Model).also { holder.mVehicleTextView.text = it }
 
 
 

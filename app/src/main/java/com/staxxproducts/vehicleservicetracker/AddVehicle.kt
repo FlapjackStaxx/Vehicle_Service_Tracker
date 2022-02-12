@@ -1,15 +1,16 @@
 package com.staxxproducts.vehicleservicetracker
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class AddVehicle: AppCompatActivity() {
@@ -21,12 +22,13 @@ class AddVehicle: AppCompatActivity() {
     private var mServiceList: ArrayList<Service>? = null
     private val fromYear: String = "2022"
     private val toYear: String = "1900"
+    private var currentMileage: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_vehicle)
 
-
+        // Runs loadData to populate the list of vehicles
         loadData()
 
 
@@ -37,25 +39,30 @@ class AddVehicle: AppCompatActivity() {
             android.R.layout.simple_spinner_item, listYear)
         val buttonSave = findViewById<Button>(R.id.addButton)
 
-        //Get range of years for spinner
+        // Get range of years for spinner
         listYear = getYearRange(fromYear, toYear)
         yearSpin.adapter = adapterSpin
 
-        //Executes saveData to add vehicle inputs to Gson
-        buttonSave.setOnClickListener { saveData() }
+        // Upon clicking Save getMoreInfo gets the newly added vehicle's mileage
+        buttonSave.setOnClickListener { getMoreInfo() }
     }
 
+    //Adds data for a new vehicle
     private fun saveData() {
+
         val year = findViewById<Spinner>(R.id.yearSpin)
         val make = findViewById<EditText>(R.id.makeEt)
         val model = findViewById<EditText>(R.id.modelEt)
 
-        val date = ""
-        val mileage = ""
-        val servicenotes = ""
-        val typeofservice = ""
-        mServiceList!!.add(Service(date,mileage,servicenotes,typeofservice))
+        // Sets the current date and time as first entry
+        val timestamp = Date()
+        val dateString = timestamp.dateToString("MM-dd-yyyy")
+        val serviceNotes = ""
+        val typeOfService = ""
 
+        mServiceList!!.add(Service(dateString, currentMileage, serviceNotes, typeOfService))
+
+        // insertItem creates strings of the year make and model along with default / current service info and adds it to the vehicles data
         insertItem(year.selectedItem.toString(), make.text.toString(), model.text.toString(), mServiceList!!)
 
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
@@ -64,11 +71,34 @@ class AddVehicle: AppCompatActivity() {
         val json: String = gson.toJson(mVehicleList1)
         editor.putString("vehicle list", json)
         editor.apply()
+
+        // Sends user back to Existing Vehicle screen
         val intent = Intent(this, ExistingVehicle::class.java)
         startActivity(intent)
+
     }
 
+    // Creates a dialog box to enter vehicles current mileage then executes saveData to push data to the list
+    private fun getMoreInfo() {
+            val builder = AlertDialog.Builder(this)
+            val inflater = layoutInflater
+            builder.setTitle("Enter Current Info")
+            val dialogLayout = inflater.inflate(R.layout.more_info_popup, null)
+            val currentMiles  = dialogLayout.findViewById<EditText>(R.id.currentMilesEt)
+            val btnOkay = dialogLayout.findViewById<Button>(R.id.btnok)
+            builder.setView(dialogLayout)
+            btnOkay.setOnClickListener { currentMileage = currentMiles.text.toString()
 
+                //Executes saveData to add vehicle inputs to Gson
+                saveData()
+            }
+
+            builder.show()
+
+
+        }
+
+    // Populates the list of vehicles and their services for display
     private fun loadData() {
 
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
@@ -99,5 +129,15 @@ class AddVehicle: AppCompatActivity() {
             listYear.add(cur--.toString())
         }
         return listYear
+    }
+
+
+    // Returns the current date
+    private fun Date.dateToString(format: String): String {
+        //simple date formatter
+        val dateFormatter = SimpleDateFormat(format, Locale.getDefault())
+
+        //return the formatted date string
+        return dateFormatter.format(this)
     }
 }

@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/textView"
@@ -17,6 +18,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="0dp"
         android:text="@string/exist_v_text"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="24sp" />
 
@@ -36,8 +38,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/goBackBtn"
+        android:textColor="@color/white"
         android:layout_marginBottom="4dp"
-
+        android:backgroundTint="@color/teal_700"
         />
 
 

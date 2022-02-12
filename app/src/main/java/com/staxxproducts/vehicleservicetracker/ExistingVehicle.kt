@@ -2,10 +2,8 @@ package com.staxxproducts.vehicleservicetracker
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +24,6 @@ class  ExistingVehicle: AppCompatActivity() {
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: VehicleAdapter? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null
-    private val TAG = "MyActivity"
     private var recLength: Int = 0
 
 
@@ -34,11 +31,12 @@ class  ExistingVehicle: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.existing_vehicle)
 
-
+        // Runs loadData to populate the list of services
         loadData()
+        // Populates the recycler view with the list of vehicles
         buildRecyclerView()
 
-
+        // Sends user back to the main screen
         val backButton = findViewById<Button>(R.id.existGoBack)
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -46,15 +44,14 @@ class  ExistingVehicle: AppCompatActivity() {
             startActivity(intent)
         }
 
-        mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListenr(this, mRecyclerView!!, object : RecyclerItemClickListenr.OnItemClickListener {
+        // Sets the touch listener for the recycler view of vehicles
+        mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListener(this, object : RecyclerItemClickListener.OnItemClickListener {
 
         override fun onItemClick(view: View, position: Int) {
-            Toast.makeText(this@ExistingVehicle,"You clicked $position",Toast.LENGTH_SHORT).show()
+           // Toast.makeText(this@ExistingVehicle,"You clicked $position",Toast.LENGTH_SHORT).show()
             getLine(position)
             checkRecordLength(position)
 
-
-            Log.i(TAG, "getLine: $finalStr")
 
             val intent1 = Intent(this@ExistingVehicle, ViewServices::class.java)
             passId = position
@@ -74,13 +71,12 @@ class  ExistingVehicle: AppCompatActivity() {
 
 
     private fun loadData() {
-
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
         val gson = Gson()
         val json = sharedPreferences.getString("vehicle list", null)
-        val type: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
+        val vehicleServices: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
 
-        mVehicleList1 = gson.fromJson(json, type)
+        mVehicleList1 = gson.fromJson(json, vehicleServices)
         if (mVehicleList1 == null) {
             mVehicleList1 = ArrayList()
         }
@@ -117,17 +113,14 @@ class  ExistingVehicle: AppCompatActivity() {
 
     }
 
+
+    // Returns the number of service records
     private fun checkRecordLength(position: Int) {
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
-        val gson = Gson()
         val json = sharedPreferences.getString("vehicle list", null)
         val jsonArray = JSONArray(json)
         val jsonServices = jsonArray.getJSONObject(position).getJSONArray("Services")
         recLength = jsonServices.length()
-
-
-        Log.i("Service Record # ",recLength.toString())
-
     }
 
 

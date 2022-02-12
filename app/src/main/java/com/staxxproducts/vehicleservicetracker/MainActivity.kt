@@ -11,20 +11,24 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initializes buttons
         val addButton = findViewById<Button>(R.id.addVehButton)
         val existButton = findViewById<Button>(R.id.existingButton)
         val aboutButton = findViewById<Button>(R.id.abtButton)
 
+        // Adds a new vehicle on click
         addButton.setOnClickListener {
             val intent = Intent(this, AddVehicle::class.java)
             startActivity(intent)
         }
 
+        // Sends user to Existing Vehicle list
         existButton.setOnClickListener {
             val intent = Intent(this, ExistingVehicle::class.java)
             startActivity(intent)
         }
 
+        // Sends user to About screen
         aboutButton.setOnClickListener {
             val intent = Intent(this, About::class.java)
             startActivity(intent)

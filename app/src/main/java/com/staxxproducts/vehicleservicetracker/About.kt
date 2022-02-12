@@ -10,11 +10,21 @@ class About: MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.about_screen)
 
-    val backButton = findViewById<Button>(R.id.goBackBtn)
 
-    backButton.setOnClickListener {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-         }
+        // Initialize buttons
+        val backButton = findViewById<Button>(R.id.goBackBtn)
+        val adminButton = findViewById<Button>(R.id.adminBtn)
+
+        // Returns user to first screen
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Sends user to Admin Activities
+        adminButton.setOnClickListener {
+            val intent = Intent(this, AdminActivities::class.java)
+            startActivity(intent)
+        }
     }
 }
