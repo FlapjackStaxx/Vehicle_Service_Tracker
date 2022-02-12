@@ -5,8 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/white">
+    tools:context=".MainActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -31,8 +30,10 @@
         android:layout_marginBottom="30dp"
         android:gravity="center_vertical|center_horizontal"
         android:hint="@string/clickForInfo"
+        android:textColorHint="@color/black"
         android:textSize="14sp"
         android:textColor="@color/black"
+        android:background="@color/lightBG"
         app:layout_constraintBottom_toTopOf="@+id/svcRecGoBackBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

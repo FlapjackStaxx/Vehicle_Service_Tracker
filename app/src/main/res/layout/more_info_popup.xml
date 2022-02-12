@@ -36,8 +36,8 @@ android:orientation="vertical">
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="@string/OK"
-        android:textColor="#ffffffff" />
-
+        android:textColor="#ffffffff"
+        android:backgroundTint="@color/teal_700" />
 
 
 </LinearLayout>

@@ -13,7 +13,7 @@ class ServiceAdapter (servicesList: ArrayList<Service>) :
     private val mServiceItem: ArrayList<Service> = servicesList
 
     class ServiceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var mServiceTextView: TextView = itemView.findViewById(R.id.textview_line1)
+        var mServiceTextView: TextView = itemView.findViewById(R.id.serviceItemTv)
 
 
     }
@@ -25,7 +25,7 @@ class ServiceAdapter (servicesList: ArrayList<Service>) :
         viewType: Int
     ): ServiceViewHolder {
         val v =
-            LayoutInflater.from(parent.context).inflate(R.layout.vehicle_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.service_item, parent, false)
         return ServiceViewHolder(v)
 
 
@@ -33,7 +33,7 @@ class ServiceAdapter (servicesList: ArrayList<Service>) :
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val currentItem: Service = mServiceItem[position]
-        (currentItem.date + " " + currentItem.mileage + " " + currentItem.typeOfService).also { holder.mServiceTextView.text = it }
+        (currentItem.date + "   ||  " + currentItem.mileage + " miles ||   " + currentItem.typeOfService).also { holder.mServiceTextView.text = it }
 
 
 

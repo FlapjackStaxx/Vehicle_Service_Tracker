@@ -57,8 +57,8 @@ class AddVehicle: AppCompatActivity() {
         // Sets the current date and time as first entry
         val timestamp = Date()
         val dateString = timestamp.dateToString("MM-dd-yyyy")
-        val serviceNotes = ""
-        val typeOfService = ""
+        val serviceNotes = "Added Vehicle To List"
+        val typeOfService = "Added Vehicle"
 
         mServiceList!!.add(Service(dateString, currentMileage, serviceNotes, typeOfService))
 

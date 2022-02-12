@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,8 +17,8 @@ class ViewServices: AppCompatActivity() {
 
     // Initializes Variables
     var finalStr: String = ""
-    var svcId: Int = 0
-    var vId: Int = 0
+    private var svcId: Int = 0
+    private var vId: Int = 0
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
     private var mServiceList: ArrayList<Service>? = null
     private var mRecyclerView: RecyclerView? = null
@@ -72,7 +71,7 @@ class ViewServices: AppCompatActivity() {
         mRecyclerView?.addOnItemTouchListener(RecyclerItemClickListener(this, object : RecyclerItemClickListener.OnItemClickListener {
 
             override fun onItemClick(view: View, position: Int) {
-                Toast.makeText(this@ViewServices,"You clicked $position",Toast.LENGTH_SHORT).show()
+              //  Toast.makeText(this@ViewServices,"You clicked $position",Toast.LENGTH_SHORT).show()
 
                 // Gets the position of the service item clicked and populates the TextView with that items notes
                 getLine(position)
@@ -117,6 +116,7 @@ class ViewServices: AppCompatActivity() {
         mRecyclerView?.adapter = mAdapter
     }
 
+
     // Returns a string of the specific TextView clicked inside of the RecyclerView linked to the vehicle list
     fun getLine(it: Int){
         val sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE)
@@ -125,7 +125,7 @@ class ViewServices: AppCompatActivity() {
         val jsonServices = jsonArray.getJSONObject(vId).getJSONArray("Services")
 
 
-        val notesSvcEntry: String = jsonServices.getJSONObject(it).getString("servicenotes")
+        val notesSvcEntry: String = jsonServices.getJSONObject(it).getString("serviceNotes")
         finalStr = (notesSvcEntry)
 
     }

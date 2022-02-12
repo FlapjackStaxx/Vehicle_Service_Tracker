@@ -80,7 +80,7 @@ class AddRecord: MainActivity() {
         val svcNotesEt = findViewById<EditText>(R.id.svcNotes)
         //Concatenate the various output strings from the DatePicker into one longer string and assign the input data to variables
         svcDate =
-            (svcDateP.month.toString() + "-" + svcDateP.dayOfMonth.toString() + "-" + svcDateP.year.toString())
+            (svcDateP.month.toString() + "." + svcDateP.dayOfMonth.toString() + "." + svcDateP.year.toString())
         svcMile = mileageEt.text.toString()
         svcType = svcTypeEt.text.toString()
         svcNotes = svcNotesEt.text.toString()
