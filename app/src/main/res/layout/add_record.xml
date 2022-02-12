@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/vehicleInfoTv"
@@ -13,6 +13,8 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:text="@string/vehInfo"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/lightBG"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,15 +24,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:autofillHints="@string/mileage"
+        android:backgroundTint="@color/lightBG"
         android:ems="10"
         android:hint="@string/mileage"
-        android:autofillHints = "@string/mileage"
         android:inputType="text"
         android:textAlignment="center"
+        android:textColorHint="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/svcTypeEt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <DatePicker
         android:id="@+id/svcDateP"
@@ -58,6 +63,8 @@
         android:ems="10"
         android:hint="@string/svcType"
         android:autofillHints="@string/svcType"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/lightBG"
         android:inputType="text"
         android:minHeight="48dp"
         android:textAlignment="center"
@@ -65,18 +72,6 @@
         app:layout_constraintBottom_toTopOf="@+id/svcNotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/addSvcBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/add_record"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/teal_700"/>
 
     <EditText
         android:id="@+id/svcNotes"
@@ -88,6 +83,8 @@
         android:ems="10"
         android:hint="@string/svcNotes"
         android:autofillHints="@string/svcNotes"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/lightBG"
         android:inputType="text"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarStyle="insideOverlay"
@@ -96,4 +93,20 @@
         app:layout_constraintBottom_toTopOf="@+id/addSvcBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/addSvcBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="@string/add_record"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

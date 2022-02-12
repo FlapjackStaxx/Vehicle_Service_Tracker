@@ -5,17 +5,17 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/white">
+    tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/addVehicleTv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:text="@string/add_v_text"
+        android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,50 +24,53 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/addVehicleTv"
-        app:layout_constraintBottom_toTopOf="@id/addButton">
+        app:layout_constraintBottom_toTopOf="@id/addButton"
+        app:layout_constraintTop_toBottomOf="@id/addVehicleTv">
 
         <TextView
+            android:id="@+id/selectYearTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/selectYearTv"
-            android:text="@string/spinYear"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="100dp"
             android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/spinYear"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:gravity="center_horizontal"     />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Spinner
             android:id="@+id/yearSpin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="100dp"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/lightBG"
+            android:backgroundTintMode="add"
+            android:contentDescription="@string/hintYear"
             android:gravity="center"
             android:minHeight="48dp"
             android:prompt="@string/spinYear"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/selectYearTv"
-            android:contentDescription="@string/hintYear"   />
+            app:layout_constraintTop_toBottomOf="@id/selectYearTv" />
 
         <EditText
             android:id="@+id/makeEt"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/lightBG"
             android:ems="10"
-            android:minHeight="48dp"
             android:hint="@string/hintMake"
             android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/yearSpin"
@@ -78,30 +81,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/lightBG"
             android:ems="10"
-            android:minHeight="48dp"
             android:hint="@string/hintModel"
+            android:inputType="text"
+            android:minHeight="48dp"
             android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@+id/makeEt"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/makeEt"
             tools:ignore="Autofill" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/teal_700"
         android:text="@string/add_v_text"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck"
-        android:backgroundTint="@color/teal_700"/>
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
