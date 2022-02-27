@@ -20,7 +20,7 @@ class ViewServices: AppCompatActivity() {
     private var svcId: Int = 0
     private var vId: Int = 0
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<Service>? = null
+    private var mServiceList: ArrayList<ServiceOLD>? = null
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: ServiceAdapter? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null
@@ -93,7 +93,7 @@ class ViewServices: AppCompatActivity() {
         val gson = Gson()
 
         val vehicleInfo: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
-        val serviceInfo: Type = object : TypeToken<ArrayList<Service?>?>() {}.type
+        val serviceInfo: Type = object : TypeToken<ArrayList<ServiceOLD?>?>() {}.type
 
 
         mServiceList = gson.fromJson(jsonServices, serviceInfo)

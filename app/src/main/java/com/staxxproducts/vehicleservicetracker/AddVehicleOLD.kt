@@ -19,7 +19,7 @@ class AddVehicleOLD: AppCompatActivity() {
     // Declare Global Variables
     private var listYear: MutableList<String> = ArrayList()
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<Service>? = null
+    private var mServiceList: ArrayList<ServiceOLD>? = null
     private val fromYear: String = "2022"
     private val toYear: String = "1900"
     private var currentMileage: String = ""
@@ -60,7 +60,7 @@ class AddVehicleOLD: AppCompatActivity() {
         val serviceNotes = "Added Vehicle To List"
         val typeOfService = "Added Vehicle"
 
-        mServiceList!!.add(Service(dateString, currentMileage, serviceNotes, typeOfService))
+        mServiceList!!.add(ServiceOLD(dateString, currentMileage, serviceNotes, typeOfService))
 
         // insertItem creates strings of the year make and model along with default / current service info and adds it to the vehicles data
         insertItem(year.selectedItem.toString(), make.text.toString(), model.text.toString(), mServiceList!!)
@@ -118,7 +118,7 @@ class AddVehicleOLD: AppCompatActivity() {
 
 
 
-    private fun insertItem(Year: String, Make: String, Model: String, mServiceList: ArrayList<Service>) {
+    private fun insertItem(Year: String, Make: String, Model: String, mServiceList: ArrayList<ServiceOLD>) {
         mVehicleList1!!.add(VehicleServiceItem(Year,Make,Model,mServiceList))
     }
 

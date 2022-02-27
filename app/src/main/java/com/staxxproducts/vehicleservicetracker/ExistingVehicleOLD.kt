@@ -20,7 +20,7 @@ class  ExistingVehicleOLD: AppCompatActivity() {
     var passMd: String = ""
     var passId: Int = 0
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<Service>? = null
+    private var mServiceList: ArrayList<ServiceOLD>? = null
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: VehicleAdapter? = null
     private var mLayoutManager: RecyclerView.LayoutManager? = null

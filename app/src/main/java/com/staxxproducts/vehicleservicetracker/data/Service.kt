@@ -10,10 +10,10 @@ import androidx.room.PrimaryKey
                             onDelete = ForeignKey.CASCADE)))
 data class Service(
     @PrimaryKey(autoGenerate = true)
-    val serviceId: Int,
-    val vehicleId: Int?,
+    val serviceId: Int?,
+    val vehicleId: Long?,
     val serviceDate: String,
-    val serviceMiles: Int,
+    val serviceMiles: String,
     val serviceType: String,
     val serviceNotes: String
 

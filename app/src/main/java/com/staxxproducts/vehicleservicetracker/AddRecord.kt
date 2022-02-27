@@ -2,12 +2,10 @@ package com.staxxproducts.vehicleservicetracker
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
@@ -27,7 +25,7 @@ class AddRecord: MainActivity() {
     private var svcNotes: String = ""
     private var listLength: Int = 0
     private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<Service>? = null
+    private var mServiceList: ArrayList<ServiceOLD>? = null
 
     private var recLength: Int = 0
 
@@ -87,10 +85,10 @@ class AddRecord: MainActivity() {
 
         // If the list of services is empty it sets the first record rather than adds to the list
         if (mServiceList!!.isEmpty()) {
-            mServiceList!![recLength-1] = Service(svcDate, svcMile, svcNotes, svcType)
+            mServiceList!![recLength-1] = ServiceOLD(svcDate, svcMile, svcNotes, svcType)
         }
         else {
-            mServiceList!!.add(recLength, Service(svcDate, svcMile, svcNotes, svcType))
+            mServiceList!!.add(recLength, ServiceOLD(svcDate, svcMile, svcNotes, svcType))
         }
 
         // mServiceList!!.add(recLength-1,Service(svcDate, svcMile, svcNotes, svcType))
@@ -108,7 +106,7 @@ class AddRecord: MainActivity() {
 
 
     // Inserts a new service item to the vehicle list at position vId
-     private fun insertItem(Year: String, Make: String, Model: String, mServiceList: ArrayList<Service>) {
+     private fun insertItem(Year: String, Make: String, Model: String, mServiceList: ArrayList<ServiceOLD>) {
          mVehicleList1!![vId] = (VehicleServiceItem(Year,Make,Model,mServiceList))
     }
 
@@ -121,7 +119,7 @@ class AddRecord: MainActivity() {
         val gson = Gson()
 
         val type: Type = object : TypeToken<ArrayList<VehicleServiceItem?>?>() {}.type
-        val type1: Type = object : TypeToken<ArrayList<Service?>?>() {}.type
+        val type1: Type = object : TypeToken<ArrayList<ServiceOLD?>?>() {}.type
 
 
         mServiceList = gson.fromJson(jsonServices, type1)

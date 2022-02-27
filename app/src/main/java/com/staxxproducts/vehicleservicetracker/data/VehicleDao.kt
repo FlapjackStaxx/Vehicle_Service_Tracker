@@ -6,13 +6,13 @@ import androidx.room.*
 interface VehicleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertVehicle(vehicle: List<Vehicle>)
+    fun insertVehicle(vehicle: List<Vehicle>): List<Long>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertService(service: Service)
+    fun insertService(service: List<Service>): List<Long>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertVehicleServiceCrossRef(crossRef: VehicleStudentCrossRef)
+    fun insertVehicleServiceCrossRef(crossRef: VehicleStudentCrossRef)
 
     @Transaction
     @Query("SELECT * FROM VEHICLE WHERE vehicleId = :vehicleId")

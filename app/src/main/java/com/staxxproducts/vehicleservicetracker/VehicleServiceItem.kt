@@ -5,5 +5,5 @@ data class VehicleServiceItem(
     val Year: String,
     val Make: String,
     val Model: String,
-    val Services: ArrayList<Service>
+    val Services: ArrayList<ServiceOLD>
 )

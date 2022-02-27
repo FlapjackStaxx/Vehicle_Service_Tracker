@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ServiceAdapter (servicesList: ArrayList<Service>) :
+class ServiceAdapter (servicesList: ArrayList<ServiceOLD>) :
     RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder>() {
-    private val mServiceItem: ArrayList<Service> = servicesList
+    private val mServiceItem: ArrayList<ServiceOLD> = servicesList
 
     class ServiceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var mServiceTextView: TextView = itemView.findViewById(R.id.serviceItemTv)
@@ -32,7 +32,7 @@ class ServiceAdapter (servicesList: ArrayList<Service>) :
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
-        val currentItem: Service = mServiceItem[position]
+        val currentItem: ServiceOLD = mServiceItem[position]
         (currentItem.date + "   ||  " + currentItem.mileage + " miles ||   " + currentItem.typeOfService).also { holder.mServiceTextView.text = it }
 
 
