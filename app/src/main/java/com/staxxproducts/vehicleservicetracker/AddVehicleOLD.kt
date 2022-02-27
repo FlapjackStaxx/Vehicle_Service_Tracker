@@ -1,18 +1,19 @@
 package com.staxxproducts.vehicleservicetracker
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.staxxproducts.vehicleservicetracker.data.Vehicle
-import com.staxxproducts.vehicleservicetracker.data.VehicleDatabase
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.lang.reflect.Type
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.concurrent.thread
 
 
-class AddVehicle: AppCompatActivity() {
+class AddVehicleOLD: AppCompatActivity() {
 
 
     // Declare Global Variables
@@ -22,94 +23,11 @@ class AddVehicle: AppCompatActivity() {
     private val fromYear: String = "2022"
     private val toYear: String = "1900"
     private var currentMileage: String = ""
-    var dateString: String = ""
-    var serviceNotes: String = ""
-    var typeOfService: String = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_vehicle)
-        val dao = VehicleDatabase.getInstance(applicationContext).vehicleDao
 
-
-        val make = findViewById<EditText>(R.id.makeEt)
-        val model = findViewById<EditText>(R.id.modelEt)
-        // Declare Local Variables
-        val yearSpin = findViewById<Spinner>(R.id.yearSpin)
-        val adapterSpin = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item, listYear)
-        val buttonSave = findViewById<Button>(R.id.addButton)
-
-        // Get range of years for spinner
-        listYear = getYearRange(fromYear, toYear)
-        yearSpin.adapter = adapterSpin
-
-        buttonSave.setOnClickListener {
-            getMoreInfo()
-
-            val serviceAdd = listOf(
-                Service(dateString,currentMileage,serviceNotes,typeOfService)
-            )
-            val vehicleAdd = listOf(
-                Vehicle(null,yearSpin.selectedItem.toString(),
-                make.text.toString(),model.text.toString()))
-            thread {
-                dao.insertVehicle(vehicleAdd)
-            }
-        }
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-
-    }
-
-    private fun getYearRange(startYear: String, endYear: String): MutableList<String> {
-        var cur = startYear.toInt()
-        val stop = endYear.toInt()
-        while (cur >= stop) {
-            listYear.add(cur--.toString())
-        }
-        return listYear
-    }
-
-    // Creates a dialog box to enter vehicles current mileage then executes saveData to push data to the list
-    private fun getMoreInfo() {
-        val builder = AlertDialog.Builder(this)
-        val inflater = layoutInflater
-        builder.setTitle("Enter Current Info")
-        val dialogLayout = inflater.inflate(R.layout.more_info_popup, null)
-        val currentMiles  = dialogLayout.findViewById<EditText>(R.id.currentMilesEt)
-        val btnOkay = dialogLayout.findViewById<Button>(R.id.btnok)
-        builder.setView(dialogLayout)
-        btnOkay.setOnClickListener { currentMileage = currentMiles.text.toString()
-
-        }
-
-        builder.show()
-
-         val timestamp = Date()
-         dateString = timestamp.dateToString("MM-dd-yyyy")
-         serviceNotes = "Added Vehicle To List"
-         typeOfService = "Added Vehicle"
-    }
-
-    // Returns the current date
-    private fun Date.dateToString(format: String): String {
-        //simple date formatter
-        val dateFormatter = SimpleDateFormat(format, Locale.getDefault())
-
-        //return the formatted date string
-        return dateFormatter.format(this)
-    }
-}
-
-
-    /*
         // Runs loadData to populate the list of vehicles
         loadData()
 
@@ -222,4 +140,4 @@ class AddVehicle: AppCompatActivity() {
         //return the formatted date string
         return dateFormatter.format(this)
     }
-*/
+}
