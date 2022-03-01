@@ -16,7 +16,7 @@ class VehicleAdapter(val vehicle: List<Vehicle>): RecyclerView.Adapter<VehicleAd
 
      class ViewHolder(view:View) : RecyclerView.ViewHolder(view){
 
-        val textView = view.findViewById<TextView>(R.id.vehicleItemTv)
+        val textView: TextView = view.findViewById(R.id.vehicleItemTv)
 
        /* fun update(index: Int){
             textView.text = list[index]
@@ -30,19 +30,11 @@ class VehicleAdapter(val vehicle: List<Vehicle>): RecyclerView.Adapter<VehicleAd
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = (vehicle[position].vehicleYear + " " +
-        vehicle[position].vehicleMake + " " + vehicle[position].vehicleModel)
+        (vehicle[position].vehicleYear + " " +
+                vehicle[position].vehicleMake + " " + vehicle[position].vehicleModel).also { holder.textView.text = it }
     }
 
     override fun getItemCount() = vehicle.size
 
-
-    override fun getItemId(position: Int): Long {
-        return super.getItemId(position)
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position)
-    }
 
 }

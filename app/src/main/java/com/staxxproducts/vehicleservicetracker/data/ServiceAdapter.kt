@@ -16,7 +16,7 @@ class ServiceAdapter(val service: List<Service>): RecyclerView.Adapter<ServiceAd
 
      class ViewHolder(view:View) : RecyclerView.ViewHolder(view){
 
-        val textView = view.findViewById<TextView>(R.id.serviceItemTextView)
+        val textView: TextView = view.findViewById(R.id.serviceItemTextView)
 
        /* fun update(index: Int){
             textView.text = list[index]
@@ -31,8 +31,8 @@ class ServiceAdapter(val service: List<Service>): RecyclerView.Adapter<ServiceAd
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = (service[position].serviceDate + " || " +
-        service[position].serviceMiles + " || " + service[position].serviceType)
+        (service[position].serviceDate + " || " +
+                service[position].serviceMiles + " || " + service[position].serviceType).also { holder.textView.text = it }
         serviceDate = service[position].serviceDate
         serviceMileage = service[position].serviceMiles
         serviceType = service[position].serviceType
@@ -46,13 +46,5 @@ class ServiceAdapter(val service: List<Service>): RecyclerView.Adapter<ServiceAd
 
     override fun getItemCount() = service.size
 
-
-    override fun getItemId(position: Int): Long {
-        return super.getItemId(position)
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position)
-    }
 
 }

@@ -1,29 +1,24 @@
 package com.staxxproducts.vehicleservicetracker
 
 import android.content.Intent
-import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.staxxproducts.vehicleservicetracker.data.ServiceViewModel
-import com.staxxproducts.vehicleservicetracker.data.VehicleDatabase
-import kotlin.concurrent.thread
 
 
-private lateinit var model: ServiceViewModel
+
 
 class SingleService: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.vehicle_service)
-        var serviceDateTv = findViewById<TextView>(R.id.svcDate1Tv)
-        var serviceMileageTv = findViewById<TextView>(R.id.svcMileage1Tv)
-        var serviceTypeTv = findViewById<TextView>(R.id.svcType1Tv)
-        var serviceNotesTv = findViewById<TextView>(R.id.svcNotes1Tv)
+        val serviceDateTv = findViewById<TextView>(R.id.svcDate1Tv)
+        val serviceMileageTv = findViewById<TextView>(R.id.svcMileage1Tv)
+        val serviceTypeTv = findViewById<TextView>(R.id.svcType1Tv)
+        val serviceNotesTv = findViewById<TextView>(R.id.svcNotes1Tv)
         val backButton = findViewById<Button>(R.id.goBackViewSvcBtn)
-        val deleteButton = findViewById<Button>(R.id.svcDeleteBtn)
 
         serviceDateTv.text = serviceDate
         serviceMileageTv.text = serviceMileage
@@ -35,17 +30,8 @@ class SingleService: AppCompatActivity() {
             startActivity(intent)
         }
 
-        deleteButton.setOnClickListener {
 
 
-  /*      thread {
-
-            val serviceList = db.vehicleDao().getServiceList(serviceId)
-            db.vehicleDao().deleteByServiceId(serviceList)
-        }*/
-        val intent = Intent(this, ViewServices::class.java)
-        startActivity(intent)
-    }
 }
     }
 

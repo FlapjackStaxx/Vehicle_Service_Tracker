@@ -1,7 +1,7 @@
 package com.staxxproducts.vehicleservicetracker
 
 import android.app.AlertDialog
-import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +20,10 @@ class AddVehicle: AppCompatActivity(){
 
     private val fromYear: String = "2022"
     private val toYear: String = "1900"
-    var dateString: String = ""
+    private var dateString: String = ""
     var serviceNotes: String = ""
-    var typeOfService: String = ""
-    var currentMileage = ""
+    private var typeOfService: String = ""
+    private var currentMileage = ""
 
 
 
@@ -71,12 +71,17 @@ class AddVehicle: AppCompatActivity(){
                 val vehicleAdd = listOf(
                     Vehicle(null,yearSpin.selectedItem.toString(),
                         make.text.toString(),model.text.toString()))
-                 db.vehicleDao().insertVehicle(vehicleAdd)
+                val iV = db.vehicleDao().insertVehicle(vehicleAdd)
+                val newiV = iV.joinToString().toLong()
 
 
+                val serviceAdd = listOf(
+                    Service(null,newiV,dateString,currentMileage,typeOfService,serviceNotes)
+                )
+                db.vehicleDao().insertService(serviceAdd)
                 // Sends user back to Existing Vehicle screen
-               /* val intent = Intent(this, ExistingVehicle::class.java)
-                startActivity(intent)*/
+               val intent = Intent(this, ExistingVehicle::class.java)
+                startActivity(intent)
 
 
             }
@@ -95,10 +100,10 @@ class AddVehicle: AppCompatActivity(){
         builder.setView(input)
 
         // Set up the buttons
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
-        // Here you get get input text from the Edittext
+        builder.setPositiveButton("OK") { dialog, which ->
+            // Here you get get input text from the Edittext
             currentMileage = input.text.toString()
-        })
+        }
         builder.show()
     }
 

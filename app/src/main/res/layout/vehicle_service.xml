@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -72,22 +71,11 @@
         android:id="@+id/goBackViewSvcBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/goBackBtn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintHorizontal_bias="0.28"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
-
-    <Button
-        android:id="@+id/svcDeleteBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineRight" />
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
 
     <TextView
         android:id="@+id/svcNotes1"
@@ -104,12 +92,11 @@
         android:id="@+id/svcNotes1Tv"
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="98dp"
         android:text="Service Notes"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/svcDeleteBtn"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/goBackViewSvcBtn"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
 
     <androidx.constraintlayout.widget.Guideline
