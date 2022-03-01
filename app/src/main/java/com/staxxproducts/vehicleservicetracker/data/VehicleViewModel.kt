@@ -22,10 +22,11 @@ class VehicleViewModel(var application: Application): ViewModel() {
     internal val getAllVehicles: LiveData<List<Vehicle>> = db.vehicleDao().getAllVehicles()
 
     fun insertVehicle(vehicle:List<Vehicle>){
-        db.vehicleDao().insertVehicle(vehicle)
+         db.vehicleDao().insertVehicle(vehicle)
+
     }
-    fun insertService(service:List<Service>){
-        db.vehicleDao().insertService(service)
+    fun insertService(service:List<Service>) {
+         db.vehicleDao().insertService(service)
     }
     fun insertVehicleServiceCrossRef(crossRef: VehicleServiceCrossRef){
         db.vehicleDao().insertVehicleServiceCrossRef(crossRef)
@@ -33,7 +34,9 @@ class VehicleViewModel(var application: Application): ViewModel() {
     suspend fun getVehicle(vehicle:Int){
         db.vehicleDao().getVehicle(vehicle)
     }
-
+    fun deleteVehicleById(vehicle: Vehicle) {
+        db.vehicleDao().deleteVehicleById(vehicle)
+    }
 
     suspend fun getVehicleAndService(vehicleId: Int){
         db.vehicleDao().getVehicleAndService(vehicleId)

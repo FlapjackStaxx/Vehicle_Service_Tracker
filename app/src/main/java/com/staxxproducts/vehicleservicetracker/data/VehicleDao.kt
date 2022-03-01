@@ -21,7 +21,7 @@ interface VehicleDao {
 
     @Transaction
     @Query("SELECT * FROM SERVICE WHERE vehicleId = :vehicleId and serviceId = :serviceId")
-    fun getService(vehicleId: Int,serviceId: Int): LiveData<List<Service>>
+    fun getService(vehicleId: Long, serviceId: Long): LiveData<List<Service>>
 
     @Transaction
     @Query("SELECT * FROM SERVICE WHERE serviceId = :serviceId")
@@ -29,7 +29,7 @@ interface VehicleDao {
 
     @Transaction
     @Query("SELECT * FROM SERVICE WHERE vehicleId = :vehicleId")
-    fun getAllVehicleServices(vehicleId: Int): LiveData<List<Service>>
+    fun getAllVehicleServices(vehicleId: Long): LiveData<List<Service>>
 
     @Transaction
     @Query("SELECT * FROM VEHICLESERVICECROSSREF WHERE vehicleId = :vehicleId")
@@ -42,6 +42,9 @@ interface VehicleDao {
     @Transaction
     @Delete
     fun deleteByServiceId(service:Service)
+    @Transaction
+    @Delete
+    fun deleteVehicleById(vehicle:Vehicle)
 
     @Query("DELETE FROM VEHICLE WHERE vehicleId = :vehicleId")
    abstract fun deleteVehicle(vehicleId: Int)

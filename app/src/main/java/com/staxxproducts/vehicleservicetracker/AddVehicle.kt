@@ -2,6 +2,7 @@ package com.staxxproducts.vehicleservicetracker
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -71,12 +72,17 @@ class AddVehicle: AppCompatActivity(){
                 val vehicleAdd = listOf(
                     Vehicle(null,yearSpin.selectedItem.toString(),
                         make.text.toString(),model.text.toString()))
-                 db.vehicleDao().insertVehicle(vehicleAdd)
+                var iV = db.vehicleDao().insertVehicle(vehicleAdd)
+                var newiV = iV.joinToString().toLong()
 
 
+                val serviceAdd = listOf(
+                    Service(null,newiV,dateString,currentMileage,typeOfService,serviceNotes)
+                )
+                db.vehicleDao().insertService(serviceAdd)
                 // Sends user back to Existing Vehicle screen
-               /* val intent = Intent(this, ExistingVehicle::class.java)
-                startActivity(intent)*/
+               val intent = Intent(this, ExistingVehicle::class.java)
+                startActivity(intent)
 
 
             }

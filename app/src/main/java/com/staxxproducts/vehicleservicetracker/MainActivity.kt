@@ -6,8 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.staxxproducts.vehicleservicetracker.data.VehicleDatabase
-var vehicleId: Int = 1
-var serviceId: Int = 1
+var vehicleId: Long = 1
+var serviceId: Long = 1
 var serviceDate = ""
 var serviceMileage = ""
 var serviceType = ""

@@ -3,6 +3,7 @@ package com.staxxproducts.vehicleservicetracker
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -29,7 +30,10 @@ class ViewServices: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.view_services)
+    }
 
+    override fun onResume() {
+        super.onResume()
         val recyclerTV = findViewById<TextView>(R.id.serviceItemTextView)
 
         recyclerViewSvc = findViewById(R.id.svcNotesRv)
@@ -83,7 +87,7 @@ class ViewServices: AppCompatActivity() {
             recyclerViewSvc.addOnItemTouchListener(RecyclerItemClickListener(this, object : RecyclerItemClickListener.OnItemClickListener {
 
                 override fun onItemClick(view: View, position: Int) {
-                    serviceId = position
+                    serviceId = position.toLong()
                     //  Toast.makeText(this@ViewServices,"You clicked $position",Toast.LENGTH_SHORT).show()
 
                     // Gets the position of the service item clicked and populates the TextView with that items notes
@@ -98,6 +102,19 @@ class ViewServices: AppCompatActivity() {
 
 
         })
+
+        // Initializes back button to send user back to Existing Vehicle list
+        val backButton = findViewById<Button>(R.id.svcRecGoBackBtn)
+        backButton.setOnClickListener {
+            val intent = Intent(this, ExistingVehicle::class.java)
+            startActivity(intent)
+        }
+        // Initializes add button to send vehicle ID, year, make, and model to the AddRecord screen
+        val addRecordBtn = findViewById<Button>(R.id.addNewRecBtn)
+        addRecordBtn.setOnClickListener {
+            val intent = Intent(this, AddRecord::class.java)
+            startActivity(intent)
+        }
     }
 
 }

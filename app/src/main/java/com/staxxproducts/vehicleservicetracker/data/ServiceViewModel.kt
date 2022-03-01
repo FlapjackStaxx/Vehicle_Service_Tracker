@@ -3,10 +3,6 @@ package com.staxxproducts.vehicleservicetracker.data
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Transaction
 import com.staxxproducts.vehicleservicetracker.db
 import com.staxxproducts.vehicleservicetracker.serviceId
 import com.staxxproducts.vehicleservicetracker.vehicleId
@@ -38,7 +34,7 @@ class ServiceViewModel(var application: Application): ViewModel() {
     suspend fun getVehicle(vehicle:Int){
         db.vehicleDao().getVehicle(vehicle)
     }
-    suspend fun getService(vehicleId: Int,serviceId:Int){
+    suspend fun getService(vehicleId: Long,serviceId: Long){
         db.vehicleDao().getService(vehicleId,serviceId)
     }
 /*    suspend fun getAllVehicleServices(vehicleId:Int){

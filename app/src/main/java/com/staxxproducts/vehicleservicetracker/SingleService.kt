@@ -23,7 +23,6 @@ class SingleService: AppCompatActivity() {
         var serviceTypeTv = findViewById<TextView>(R.id.svcType1Tv)
         var serviceNotesTv = findViewById<TextView>(R.id.svcNotes1Tv)
         val backButton = findViewById<Button>(R.id.goBackViewSvcBtn)
-        val deleteButton = findViewById<Button>(R.id.svcDeleteBtn)
 
         serviceDateTv.text = serviceDate
         serviceMileageTv.text = serviceMileage
@@ -35,17 +34,8 @@ class SingleService: AppCompatActivity() {
             startActivity(intent)
         }
 
-        deleteButton.setOnClickListener {
 
 
-  /*      thread {
-
-            val serviceList = db.vehicleDao().getServiceList(serviceId)
-            db.vehicleDao().deleteByServiceId(serviceList)
-        }*/
-        val intent = Intent(this, ViewServices::class.java)
-        startActivity(intent)
-    }
 }
     }
 

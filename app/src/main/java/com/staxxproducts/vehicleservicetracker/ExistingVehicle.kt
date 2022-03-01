@@ -8,9 +8,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.staxxproducts.vehicleservicetracker.data.*
+import kotlin.concurrent.thread
 
 
 class  ExistingVehicle: AppCompatActivity() {
@@ -21,6 +23,11 @@ class  ExistingVehicle: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.existing_vehicle)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
 
         val recyclerTV = findViewById<TextView>(R.id.vehicleItemTv)
         recyclerView = findViewById(R.id.recyclerview)
@@ -50,6 +57,25 @@ class  ExistingVehicle: AppCompatActivity() {
 
         model.getAllVehicles.observe(this, Observer { vehicle ->
             recyclerView.adapter = VehicleAdapter(vehicle)
+
+            val swipeToDeleteCallback = object: SwipeToDeleteCallback(){
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    val position = viewHolder.adapterPosition
+                    val item = vehicle[position]
+                    (vehicle as MutableList).remove(item)
+
+                    thread {
+                        db.vehicleDao().deleteVehicleById(item)
+
+                    }
+                    recyclerView.adapter?.notifyItemRemoved(position)
+
+                }
+            }
+
+            val itemTouchHelper = ItemTouchHelper(swipeToDeleteCallback)
+
+            itemTouchHelper.attachToRecyclerView(recyclerView)
             recyclerView.addOnItemTouchListener(
                 RecyclerItemClickListener(
                     this,
@@ -59,7 +85,7 @@ class  ExistingVehicle: AppCompatActivity() {
                             //  Toast.makeText(this@ViewServices,"You clicked $position",Toast.LENGTH_SHORT).show()
 
                             // Gets the position of the service item clicked and populates the TextView with that items notes
-                            vehicleId = position + 1
+                            vehicleId = position.toLong() + 1
                             val intent1 = Intent(this@ExistingVehicle, ViewServices::class.java)
 
 
@@ -76,7 +102,7 @@ class  ExistingVehicle: AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.existGoBack)
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-
+            startActivity(intent)
 
         }
 
