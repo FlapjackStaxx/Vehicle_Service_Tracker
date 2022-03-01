@@ -1,6 +1,8 @@
 package com.staxxproducts.vehicleservicetracker
 
 import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +13,7 @@ import kotlin.collections.ArrayList
 import kotlin.concurrent.thread
 
 
-class AddVehicle: AppCompatActivity() {
+class AddVehicle: AppCompatActivity(){
 
 
     // Declare Global Variables
@@ -23,13 +25,18 @@ class AddVehicle: AppCompatActivity() {
     var dateString: String = ""
     var serviceNotes: String = ""
     var typeOfService: String = ""
+    var currentMileage = ""
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_vehicle)
-        val dao = VehicleDatabase.getInstance(applicationContext).vehicleDao
+
+
+
+     //   val dao = VehicleDatabase.getInstance(applicationContext).vehicleDao
 
 
         val make = findViewById<EditText>(R.id.makeEt)
@@ -40,27 +47,15 @@ class AddVehicle: AppCompatActivity() {
             this,
             android.R.layout.simple_spinner_item, listYear)
         val buttonSave = findViewById<Button>(R.id.addButton)
-        var currentMileage = ""
 
 
 
         // Get range of years for spinner
         listYear = getYearRange(fromYear, toYear)
         yearSpin.adapter = adapterSpin
+        showDialog()
 
         buttonSave.setOnClickListener {
-            val builder = AlertDialog.Builder(this)
-            val inflater = layoutInflater
-            builder.setTitle("Enter Current Info")
-            val dialogLayout = inflater.inflate(R.layout.more_info_popup, null)
-            val currentMiles  = dialogLayout.findViewById<EditText>(R.id.currentMilesEt)
-            val btnOkay = dialogLayout.findViewById<Button>(R.id.btnok)
-            builder.setView(dialogLayout)
-
-
-
-            builder.show()
-            btnOkay.setOnClickListener { currentMileage = currentMiles.text.toString()}
 
 
             val timestamp = Date()
@@ -70,6 +65,7 @@ class AddVehicle: AppCompatActivity() {
             typeOfService = "Added Vehicle"
 
 
+
             thread {
 
 
@@ -77,24 +73,43 @@ class AddVehicle: AppCompatActivity() {
                 val vehicleAdd = listOf(
                     Vehicle(null,yearSpin.selectedItem.toString(),
                         make.text.toString(),model.text.toString()))
-               var iv=  dao.insertVehicle(vehicleAdd)
+               var iv=  db.vehicleDao().insertVehicle(vehicleAdd)
                 var newIv = iv.joinToString().toLong()
                 val serviceAdd = listOf(
                     Service(null,newIv,dateString,currentMileage,typeOfService,serviceNotes)
                 )
-               var si = dao.insertService(serviceAdd).joinToString().toLong()
-                val ivsv = VehicleStudentCrossRef(newIv,si)
-                dao.insertVehicleServiceCrossRef(ivsv)
+               var si = db.vehicleDao().insertService(serviceAdd).joinToString().toLong()
+                val ivsv = VehicleServiceCrossRef(newIv,si)
+                db.vehicleDao().insertVehicleServiceCrossRef(ivsv)
+                // Sends user back to Existing Vehicle screen
+               /* val intent = Intent(this, ExistingVehicle::class.java)
+                startActivity(intent)*/
+
+
             }
         }
-
     }
 
-    override fun onResume() {
-        super.onResume()
 
+    private fun showDialog(){
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Enter Current Mileage")
 
+        // Set up the input
+        val input = EditText(this)
+        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.hint = "Enter Text"
+        builder.setView(input)
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+        // Here you get get input text from the Edittext
+            currentMileage = input.text.toString()
+        })
+        builder.show()
     }
+
+
 
     private fun getYearRange(startYear: String, endYear: String): MutableList<String> {
         var cur = startYear.toInt()
@@ -105,10 +120,7 @@ class AddVehicle: AppCompatActivity() {
         return listYear
     }
 
-    // Creates a dialog box to enter vehicles current mileage then executes saveData to push data to the list
-    private fun getMoreInfo() {
 
-    }
 
     // Returns the current date
     private fun Date.dateToString(format: String): String {

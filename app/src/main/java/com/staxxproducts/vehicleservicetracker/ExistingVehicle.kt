@@ -1,35 +1,81 @@
 package com.staxxproducts.vehicleservicetracker
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import org.json.JSONArray
-import java.lang.reflect.Type
+import com.staxxproducts.vehicleservicetracker.data.*
 
 
 class  ExistingVehicle: AppCompatActivity() {
-    var finalStr: String = ""
-    var passYr: String = ""
-    var passMk: String = ""
-    var passMd: String = ""
-    var passId: Int = 0
-    private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<ServiceOLD>? = null
-    private var mRecyclerView: RecyclerView? = null
-    private var mAdapter: VehicleAdapter? = null
-    private var mLayoutManager: RecyclerView.LayoutManager? = null
-    private var recLength: Int = 0
 
-
+    //val dao = VehicleDatabase.getInstance(applicationContext).vehicleDao
+    private lateinit var model: VehicleViewModel
+    lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.existing_vehicle)
+
+        val recyclerTV = findViewById<TextView>(R.id.vehicleItemTv)
+         recyclerView = findViewById(R.id.recyclerview)
+        //
+
+     //   recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+     //   recyclerView.adapter = adapter
+
+
+/*        val vehicleItem: String = ""
+        adapter.list.add(vehicleItem)
+        adapter.notifyDataSetChanged()*/
+        val modelFactory = VehicleViewModelFactory(application)
+        model = ViewModelProvider(this,modelFactory).get(VehicleViewModel::class.java)
+        val linearLayoutManager = LinearLayoutManager(
+                this, RecyclerView.VERTICAL,false)
+        recyclerView.layoutManager = linearLayoutManager
+
+       // val viewModel = ViewModelProvider(this).get(VehicleViewModel::class.java)
+/*        viewModel.getAllVehicles().observe(this) { it ->
+            if (it != null) {
+                adapter.list.clear()
+                adapter.list.addAll(it.map { it.vehicleYear})
+                adapter.notifyDataSetChanged()
+            }
+        }*/
+
+            model.getAllVehicles.observe(this, Observer {  vehicle ->
+                recyclerView.adapter = VehicleAdapter(vehicle)
+
+
+            })
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
         // Runs loadData to populate the list of services
         loadData()
@@ -55,12 +101,15 @@ class  ExistingVehicle: AppCompatActivity() {
 
             val intent1 = Intent(this@ExistingVehicle, ViewServices::class.java)
             passId = position
-            intent1.putExtra("ServiceLength",recLength)
             intent1.putExtra("CarID",passId)
-            intent1.putExtra("Year",passYr)
+*/
+/*            intent1.putExtra("Year",passYr)
             intent1.putExtra("Make",passMk)
+             intent1.putExtra("ServiceLength",recLength)
+
             intent1.putExtra("Model",passMd)
-            startActivity(intent1)
+            startActivity(intent1)*//*
+
         }
 
      }))
@@ -124,4 +173,4 @@ class  ExistingVehicle: AppCompatActivity() {
     }
 
 
-}
+}*/

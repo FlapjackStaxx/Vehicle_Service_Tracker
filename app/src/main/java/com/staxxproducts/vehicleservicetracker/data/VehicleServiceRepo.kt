@@ -8,6 +8,6 @@ class VehicleServiceRepo(private val vehicleDao: VehicleDao) {
     fun insertService(service: List<Service>) =
         vehicleDao.insertService(service)
 
-    fun insertVehicleServiceCrossRef(crossRef: VehicleStudentCrossRef) =
+    fun insertVehicleServiceCrossRef(crossRef: VehicleServiceCrossRef) =
         vehicleDao.insertVehicleServiceCrossRef(crossRef)
 }

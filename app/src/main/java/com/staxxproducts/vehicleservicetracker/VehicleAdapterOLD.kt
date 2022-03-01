@@ -1,3 +1,4 @@
+/*
 package com.staxxproducts.vehicleservicetracker
 
 
@@ -8,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class VehicleAdapter (vehicleList: ArrayList<VehicleServiceItem>) :
-    RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>() {
+class VehicleAdapterOLD (vehicleList: ArrayList<VehicleServiceItem>) :
+    RecyclerView.Adapter<VehicleAdapterOLD.VehicleViewHolder>() {
     private val mVehicleList: ArrayList<VehicleServiceItem> = vehicleList
 
     class VehicleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,4 +49,4 @@ class VehicleAdapter (vehicleList: ArrayList<VehicleServiceItem>) :
 
 
 
-}
+}*/

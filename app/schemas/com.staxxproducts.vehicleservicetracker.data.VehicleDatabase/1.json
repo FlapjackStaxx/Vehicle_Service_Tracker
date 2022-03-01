@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a9b5e764fcc25866dc56e08b0cee8993",
+    "identityHash": "ac3f25f9cdace42d9481f6f13492db6b",
     "entities": [
       {
         "tableName": "Vehicle",
@@ -44,13 +44,19 @@
       },
       {
         "tableName": "Service",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `serviceDate` TEXT NOT NULL, `serviceMiles` INTEGER NOT NULL, `serviceType` TEXT NOT NULL, `serviceNotes` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceId` INTEGER PRIMARY KEY AUTOINCREMENT, `vehicleId` INTEGER, `serviceDate` TEXT NOT NULL, `serviceMiles` TEXT NOT NULL, `serviceType` TEXT NOT NULL, `serviceNotes` TEXT NOT NULL, FOREIGN KEY(`vehicleId`) REFERENCES `Vehicle`(`vehicleId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "serviceId",
             "columnName": "serviceId",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
+          },
+          {
+            "fieldPath": "vehicleId",
+            "columnName": "vehicleId",
+            "affinity": "INTEGER",
+            "notNull": false
           },
           {
             "fieldPath": "serviceDate",
@@ -61,7 +67,7 @@
           {
             "fieldPath": "serviceMiles",
             "columnName": "serviceMiles",
-            "affinity": "INTEGER",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
@@ -84,10 +90,22 @@
           "autoGenerate": true
         },
         "indices": [],
-        "foreignKeys": []
+        "foreignKeys": [
+          {
+            "table": "Vehicle",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vehicleId"
+            ],
+            "referencedColumns": [
+              "vehicleId"
+            ]
+          }
+        ]
       },
       {
-        "tableName": "VehicleStudentCrossRef",
+        "tableName": "VehicleServiceCrossRef",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vehicleId` INTEGER NOT NULL, `serviceId` INTEGER NOT NULL, PRIMARY KEY(`vehicleId`, `serviceId`))",
         "fields": [
           {
@@ -117,7 +135,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a9b5e764fcc25866dc56e08b0cee8993')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ac3f25f9cdace42d9481f6f13492db6b')"
     ]
   }
 }

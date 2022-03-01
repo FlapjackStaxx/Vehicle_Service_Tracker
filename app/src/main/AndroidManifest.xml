@@ -4,6 +4,9 @@
 
     <application
         android:allowBackup="true"
+        android:name=".App"
+        android:usesCleartextTraffic="true"
+
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -24,7 +27,7 @@
         <activity android:name=".About"/>
         <activity android:name=".AddRecord"/>
         <activity android:name=".ViewServices"/>
-        <activity android:name=".AdminActivities"/>
+        <activity android:name=".AdminActivities" />
     </application>
 
 </manifest>
