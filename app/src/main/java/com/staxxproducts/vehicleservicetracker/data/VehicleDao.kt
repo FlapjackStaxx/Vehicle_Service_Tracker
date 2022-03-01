@@ -20,8 +20,16 @@ interface VehicleDao {
     suspend fun getVehicle(vehicleId: Int): List<Vehicle>
 
     @Transaction
+    @Query("SELECT * FROM SERVICE WHERE vehicleId = :vehicleId and serviceId = :serviceId")
+    fun getService(vehicleId: Int,serviceId: Int): LiveData<List<Service>>
+
+    @Transaction
     @Query("SELECT * FROM SERVICE WHERE serviceId = :serviceId")
-    suspend fun getService(serviceId: Int): List<Service>
+    fun getServiceList(serviceId: Int): Service
+
+    @Transaction
+    @Query("SELECT * FROM SERVICE WHERE vehicleId = :vehicleId")
+    fun getAllVehicleServices(vehicleId: Int): LiveData<List<Service>>
 
     @Transaction
     @Query("SELECT * FROM VEHICLESERVICECROSSREF WHERE vehicleId = :vehicleId")
@@ -31,4 +39,10 @@ interface VehicleDao {
     @Transaction
     @Query("SELECT * FROM VEHICLE")
     fun getAllVehicles(): LiveData<List<Vehicle>>
+    @Transaction
+    @Delete
+    fun deleteByServiceId(service:Service)
+
+    @Query("DELETE FROM VEHICLE WHERE vehicleId = :vehicleId")
+   abstract fun deleteVehicle(vehicleId: Int)
 }

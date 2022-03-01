@@ -5,6 +5,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.staxxproducts.vehicleservicetracker.data.Service
 
 class RecyclerItemClickListener(context: Context, private val mListener: OnItemClickListener?) : RecyclerView.OnItemTouchListener {
 
@@ -16,9 +17,12 @@ class RecyclerItemClickListener(context: Context, private val mListener: OnItemC
     })
 
     interface OnItemClickListener {
+
         fun onItemClick(view: View, position: Int)
 
+
     }
+
 
     override fun onInterceptTouchEvent(view: RecyclerView, e: MotionEvent): Boolean {
         val childView = view.findChildViewUnder(e.x, e.y)

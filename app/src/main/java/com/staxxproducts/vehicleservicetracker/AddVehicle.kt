@@ -2,7 +2,6 @@ package com.staxxproducts.vehicleservicetracker
 
 import android.app.AlertDialog
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,8 +17,7 @@ class AddVehicle: AppCompatActivity(){
 
     // Declare Global Variables
     private var listYear: MutableList<String> = ArrayList()
-    private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<ServiceOLD>? = null
+
     private val fromYear: String = "2022"
     private val toYear: String = "1900"
     var dateString: String = ""
@@ -73,14 +71,9 @@ class AddVehicle: AppCompatActivity(){
                 val vehicleAdd = listOf(
                     Vehicle(null,yearSpin.selectedItem.toString(),
                         make.text.toString(),model.text.toString()))
-               var iv=  db.vehicleDao().insertVehicle(vehicleAdd)
-                var newIv = iv.joinToString().toLong()
-                val serviceAdd = listOf(
-                    Service(null,newIv,dateString,currentMileage,typeOfService,serviceNotes)
-                )
-               var si = db.vehicleDao().insertService(serviceAdd).joinToString().toLong()
-                val ivsv = VehicleServiceCrossRef(newIv,si)
-                db.vehicleDao().insertVehicleServiceCrossRef(ivsv)
+                 db.vehicleDao().insertVehicle(vehicleAdd)
+
+
                 // Sends user back to Existing Vehicle screen
                /* val intent = Intent(this, ExistingVehicle::class.java)
                 startActivity(intent)*/

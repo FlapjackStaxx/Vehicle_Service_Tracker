@@ -1,6 +1,9 @@
 package com.staxxproducts.vehicleservicetracker
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -20,23 +23,23 @@ class  ExistingVehicle: AppCompatActivity() {
         setContentView(R.layout.existing_vehicle)
 
         val recyclerTV = findViewById<TextView>(R.id.vehicleItemTv)
-         recyclerView = findViewById(R.id.recyclerview)
+        recyclerView = findViewById(R.id.recyclerview)
         //
 
-     //   recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-     //   recyclerView.adapter = adapter
+        //   recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
 
 
 /*        val vehicleItem: String = ""
         adapter.list.add(vehicleItem)
         adapter.notifyDataSetChanged()*/
         val modelFactory = VehicleViewModelFactory(application)
-        model = ViewModelProvider(this,modelFactory).get(VehicleViewModel::class.java)
+        model = ViewModelProvider(this, modelFactory).get(VehicleViewModel::class.java)
         val linearLayoutManager = LinearLayoutManager(
-                this, RecyclerView.VERTICAL,false)
+            this, RecyclerView.VERTICAL, false
+        )
         recyclerView.layoutManager = linearLayoutManager
 
-       // val viewModel = ViewModelProvider(this).get(VehicleViewModel::class.java)
+        // val viewModel = ViewModelProvider(this).get(VehicleViewModel::class.java)
 /*        viewModel.getAllVehicles().observe(this) { it ->
             if (it != null) {
                 adapter.list.clear()
@@ -45,11 +48,38 @@ class  ExistingVehicle: AppCompatActivity() {
             }
         }*/
 
-            model.getAllVehicles.observe(this, Observer {  vehicle ->
-                recyclerView.adapter = VehicleAdapter(vehicle)
+        model.getAllVehicles.observe(this, Observer { vehicle ->
+            recyclerView.adapter = VehicleAdapter(vehicle)
+            recyclerView.addOnItemTouchListener(
+                RecyclerItemClickListener(
+                    this,
+                    object : RecyclerItemClickListener.OnItemClickListener {
+
+                        override fun onItemClick(view: View, position: Int) {
+                            //  Toast.makeText(this@ViewServices,"You clicked $position",Toast.LENGTH_SHORT).show()
+
+                            // Gets the position of the service item clicked and populates the TextView with that items notes
+                            vehicleId = position + 1
+                            val intent1 = Intent(this@ExistingVehicle, ViewServices::class.java)
 
 
-            })
+                            startActivity(intent1)
+                        }
+
+
+                    })
+            )
+
+        })
+
+        // Sends user back to the main screen
+        val backButton = findViewById<Button>(R.id.existGoBack)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+
+
+        }
+
 
     }
 }

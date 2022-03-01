@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ac3f25f9cdace42d9481f6f13492db6b",
+    "identityHash": "195bd83356ded83fe0bbb758e7641cd8",
     "entities": [
       {
         "tableName": "Vehicle",
@@ -44,13 +44,13 @@
       },
       {
         "tableName": "Service",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceId` INTEGER PRIMARY KEY AUTOINCREMENT, `vehicleId` INTEGER, `serviceDate` TEXT NOT NULL, `serviceMiles` TEXT NOT NULL, `serviceType` TEXT NOT NULL, `serviceNotes` TEXT NOT NULL, FOREIGN KEY(`vehicleId`) REFERENCES `Vehicle`(`vehicleId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serviceId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `vehicleId` INTEGER, `serviceDate` TEXT NOT NULL, `serviceMiles` TEXT NOT NULL, `serviceType` TEXT NOT NULL, `serviceNotes` TEXT NOT NULL, FOREIGN KEY(`vehicleId`) REFERENCES `Vehicle`(`vehicleId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "serviceId",
             "columnName": "serviceId",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "vehicleId",
@@ -135,7 +135,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ac3f25f9cdace42d9481f6f13492db6b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '195bd83356ded83fe0bbb758e7641cd8')"
     ]
   }
 }

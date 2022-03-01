@@ -8,10 +8,14 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import com.staxxproducts.vehicleservicetracker.db
+import com.staxxproducts.vehicleservicetracker.serviceId
+import com.staxxproducts.vehicleservicetracker.vehicleId
 
-class VehicleViewModel(var application: Application): ViewModel() {
+class ServiceViewModel(var application: Application): ViewModel() {
 
     private var vehicles: LiveData<List<Vehicle>>? = null
+
+    internal var getService: LiveData<List<Service>> = db.vehicleDao().getService(vehicleId,serviceId)
 
 /*    fun getAllVehicles(): LiveData<List<Vehicle>> {
         if (vehicles != null) {
@@ -21,6 +25,7 @@ class VehicleViewModel(var application: Application): ViewModel() {
     }*/
     internal val getAllVehicles: LiveData<List<Vehicle>> = db.vehicleDao().getAllVehicles()
 
+    internal val getAllVehicleServices: LiveData<List<Service>> = db.vehicleDao().getAllVehicleServices(vehicleId)
     fun insertVehicle(vehicle:List<Vehicle>){
         db.vehicleDao().insertVehicle(vehicle)
     }
@@ -33,10 +38,22 @@ class VehicleViewModel(var application: Application): ViewModel() {
     suspend fun getVehicle(vehicle:Int){
         db.vehicleDao().getVehicle(vehicle)
     }
-
+    suspend fun getService(vehicleId: Int,serviceId:Int){
+        db.vehicleDao().getService(vehicleId,serviceId)
+    }
+/*    suspend fun getAllVehicleServices(vehicleId:Int){
+        db.vehicleDao().getAllVehicleServices(vehicleId)
+    }*/
 
     suspend fun getVehicleAndService(vehicleId: Int){
         db.vehicleDao().getVehicleAndService(vehicleId)
+    }
+    fun deleteByServiceId(service:Service) {
+        db.vehicleDao().deleteByServiceId(service)
+    }
+
+    fun deleteVehicle(vehicleId: Int){
+        db.vehicleDao().deleteVehicle(vehicleId)
     }
 }
 

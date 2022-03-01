@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.staxxproducts.vehicleservicetracker.R
+import com.staxxproducts.vehicleservicetracker.*
 
 
 class ServiceAdapter(val service: List<Service>): RecyclerView.Adapter<ServiceAdapter.ViewHolder>() {
@@ -16,11 +16,12 @@ class ServiceAdapter(val service: List<Service>): RecyclerView.Adapter<ServiceAd
 
      class ViewHolder(view:View) : RecyclerView.ViewHolder(view){
 
-        val textView = view.findViewById<TextView>(R.id.svcNotesTv)
+        val textView = view.findViewById<TextView>(R.id.serviceItemTextView)
 
        /* fun update(index: Int){
             textView.text = list[index]
         }*/
+
 
     }
 
@@ -32,6 +33,15 @@ class ServiceAdapter(val service: List<Service>): RecyclerView.Adapter<ServiceAd
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = (service[position].serviceDate + " || " +
         service[position].serviceMiles + " || " + service[position].serviceType)
+        serviceDate = service[position].serviceDate
+        serviceMileage = service[position].serviceMiles
+        serviceType = service[position].serviceType
+        serviceNotes = service[position].serviceNotes
+        serviceId = service[position].serviceId!!
+
+
+
+
     }
 
     override fun getItemCount() = service.size

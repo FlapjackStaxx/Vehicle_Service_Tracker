@@ -19,21 +19,6 @@ import kotlin.concurrent.thread
 
 class AddRecord: MainActivity() {
 
-    //Declare variables
-    private var vYr: String = ""
-    private var vMk: String = ""
-    private var vMd: String = ""
-    private var vId: Int = 0
-    private var svcDate: String = ""
-    private var svcMile: String = ""
-    private var svcType: String = ""
-    private var svcNotes: String = ""
-    private var listLength: Int = 0
-    private var mVehicleList1: ArrayList<VehicleServiceItem>? = null
-    private var mServiceList: ArrayList<ServiceOLD>? = null
-
-    private var recLength: Int = 0
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

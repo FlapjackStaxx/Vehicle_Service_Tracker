@@ -3,8 +3,15 @@ package com.staxxproducts.vehicleservicetracker
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.staxxproducts.vehicleservicetracker.data.VehicleDatabase
+var vehicleId: Int = 1
+var serviceId: Int = 1
+var serviceDate = ""
+var serviceMileage = ""
+var serviceType = ""
+var serviceNotes = ""
 
 open class MainActivity : AppCompatActivity() {
 
