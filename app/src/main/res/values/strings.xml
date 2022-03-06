@@ -6,7 +6,6 @@
     <string name="logo_desc">Vehicle Service Tracker Logo</string>
     <string name="add_v_text">Add A Vehicle</string>
     <string name="exist_v_text">Existing Vehicle</string>
-    <string name="select_v_text">Select A Vehicle</string>
     <string name="add_record">Add Record</string>
     <string name="hintYear">Year</string>
     <string name="hintMake">Make</string>
@@ -22,14 +21,13 @@
     <string name="eraseList">Erase All Vehicle Data</string>
     <string name="yesSure">Yes I Am Sure</string>
     <string name="areYouSure">ARE YOU SURE???!</string>
-    <string name="OK">Okay</string>
     <string name="aboutAppTxt">\t This app was developed with the car enthusiast in mind. If you work on your own vehicle, this application is for you!<br/>
     You can add as many vehicles as you like and then keep track of all of the maintenance you\'ve done.This application will also update you when your next service is due (as long as you set the time frame).<b/>
     This application was developed using Android Studio using Kotlin in just over a month.
         <br/>
         <br/>Developed in 2022 by Stephen Sysak.</string>
 
-    <string name="versionNum">Version 0.3 Alpha</string>
+    <string name="versionNum">Version 1.0</string>
 
 
 </resources>

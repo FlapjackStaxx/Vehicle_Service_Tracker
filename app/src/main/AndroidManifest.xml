@@ -11,10 +11,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VehicleServiceTracker">
+        android:theme="@style/Theme.VehicleServiceTracker"
+        >
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,13 +27,20 @@
         </activity>
         <activity
             android:name=".AddVehicle"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".ExistingVehicle"/>
-        <activity android:name=".About"/>
-        <activity android:name=".AddRecord"/>
-        <activity android:name=".ViewServices"/>
-        <activity android:name=".AdminActivities" />
-        <activity android:name=".SingleService" />
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ExistingVehicle"
+            android:screenOrientation="portrait" />
+        <activity android:name=".About"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AddRecord"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ViewServices"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AdminActivities"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SingleService"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
