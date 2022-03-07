@@ -17576,43 +17576,43 @@ com.google.gson.stream.JsonScope
 com.google.gson.stream.JsonToken
 com.google.gson.stream.JsonWriter
 com.google.gson.stream.MalformedJsonException
-com.staxxproducts.vehicleservicetracker.AddVehicle:
+servicetracker.AddVehicle:
     public final void setServiceNotes(java.lang.String)
-com.staxxproducts.vehicleservicetracker.BuildConfig
-com.staxxproducts.vehicleservicetracker.R$anim
-com.staxxproducts.vehicleservicetracker.R$animator
-com.staxxproducts.vehicleservicetracker.R$attr
-com.staxxproducts.vehicleservicetracker.R$bool
-com.staxxproducts.vehicleservicetracker.R$color
-com.staxxproducts.vehicleservicetracker.R$dimen
-com.staxxproducts.vehicleservicetracker.R$drawable
-com.staxxproducts.vehicleservicetracker.R$id
-com.staxxproducts.vehicleservicetracker.R$integer
-com.staxxproducts.vehicleservicetracker.R$interpolator
-com.staxxproducts.vehicleservicetracker.R$layout
-com.staxxproducts.vehicleservicetracker.R$menu
-com.staxxproducts.vehicleservicetracker.R$mipmap
-com.staxxproducts.vehicleservicetracker.R$plurals
-com.staxxproducts.vehicleservicetracker.R$string
-com.staxxproducts.vehicleservicetracker.R$style
-com.staxxproducts.vehicleservicetracker.R$styleable
-com.staxxproducts.vehicleservicetracker.R$xml
-com.staxxproducts.vehicleservicetracker.R
-com.staxxproducts.vehicleservicetracker.data.Service:
+servicetracker.BuildConfig
+servicetracker.R$anim
+servicetracker.R$animator
+servicetracker.R$attr
+servicetracker.R$bool
+servicetracker.R$color
+servicetracker.R$dimen
+servicetracker.R$drawable
+servicetracker.R$id
+servicetracker.R$integer
+servicetracker.R$interpolator
+servicetracker.R$layout
+servicetracker.R$menu
+servicetracker.R$mipmap
+servicetracker.R$plurals
+servicetracker.R$string
+servicetracker.R$style
+servicetracker.R$styleable
+servicetracker.R$xml
+servicetracker.R
+servicetracker.data.Service:
     public final java.lang.Long component1()
     public final java.lang.Long component2()
     public final java.lang.String component3()
     public final java.lang.String component4()
     public final java.lang.String component5()
     public final java.lang.String component6()
-    public final com.staxxproducts.vehicleservicetracker.data.Service copy(java.lang.Long,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-    public static synthetic com.staxxproducts.vehicleservicetracker.data.Service copy$default(com.staxxproducts.vehicleservicetracker.data.Service,java.lang.Long,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object)
-com.staxxproducts.vehicleservicetracker.data.ServiceAdapter:
+    public final servicetracker.data.Service copy(java.lang.Long,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    public static synthetic servicetracker.data.Service copy$default(servicetracker.data.Service,java.lang.Long,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object)
+servicetracker.data.ServiceAdapter:
     public final java.util.List getList()
     public final java.util.List getService()
-com.staxxproducts.vehicleservicetracker.data.ServiceViewModel:
+servicetracker.data.ServiceViewModel:
     private androidx.lifecycle.LiveData vehicles
-    public final void deleteByServiceId(com.staxxproducts.vehicleservicetracker.data.Service)
+    public final void deleteByServiceId(servicetracker.data.Service)
     public final void deleteVehicle(int)
     public final android.app.Application getApplication()
     public final androidx.lifecycle.LiveData getGetAllVehicles$app_release()
@@ -17622,56 +17622,56 @@ com.staxxproducts.vehicleservicetracker.data.ServiceViewModel:
     public final java.lang.Object getVehicleAndService(int,kotlin.coroutines.Continuation)
     public final void insertService(java.util.List)
     public final void insertVehicle(java.util.List)
-    public final void insertVehicleServiceCrossRef(com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef)
+    public final void insertVehicleServiceCrossRef(servicetracker.data.VehicleServiceCrossRef)
     public final void setApplication(android.app.Application)
     public final void setGetService$app_release(androidx.lifecycle.LiveData)
-com.staxxproducts.vehicleservicetracker.data.ServiceViewModelFactory:
+servicetracker.data.ServiceViewModelFactory:
     public final android.app.Application getApplication()
     public final void setApplication(android.app.Application)
-com.staxxproducts.vehicleservicetracker.data.Vehicle:
+servicetracker.data.Vehicle:
     public final java.lang.Long component1()
     public final java.lang.String component2()
     public final java.lang.String component3()
     public final java.lang.String component4()
-    public final com.staxxproducts.vehicleservicetracker.data.Vehicle copy(java.lang.Long,java.lang.String,java.lang.String,java.lang.String)
-    public static synthetic com.staxxproducts.vehicleservicetracker.data.Vehicle copy$default(com.staxxproducts.vehicleservicetracker.data.Vehicle,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object)
-com.staxxproducts.vehicleservicetracker.data.VehicleAdapter:
+    public final servicetracker.data.Vehicle copy(java.lang.Long,java.lang.String,java.lang.String,java.lang.String)
+    public static synthetic servicetracker.data.Vehicle copy$default(servicetracker.data.Vehicle,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object)
+servicetracker.data.VehicleAdapter:
     public final java.util.List getList()
     public final java.util.List getVehicle()
-com.staxxproducts.vehicleservicetracker.data.VehicleDao:
+servicetracker.data.VehicleDao:
     public abstract void deleteVehicle(int)
-    public abstract com.staxxproducts.vehicleservicetracker.data.Service getServiceList(int)
+    public abstract servicetracker.data.Service getServiceList(int)
     public abstract java.lang.Object getVehicle(int,kotlin.coroutines.Continuation)
     public abstract java.lang.Object getVehicleAndService(int,kotlin.coroutines.Continuation)
-    public abstract void insertVehicleServiceCrossRef(com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef)
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$10
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$7
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl:
+    public abstract void insertVehicleServiceCrossRef(servicetracker.data.VehicleServiceCrossRef)
+servicetracker.data.VehicleDao_Impl$10
+servicetracker.data.VehicleDao_Impl$7
+servicetracker.data.VehicleDao_Impl:
     public void deleteVehicle(int)
-    public com.staxxproducts.vehicleservicetracker.data.Service getServiceList(int)
+    public servicetracker.data.Service getServiceList(int)
     public java.lang.Object getVehicle(int,kotlin.coroutines.Continuation)
     public java.lang.Object getVehicleAndService(int,kotlin.coroutines.Continuation)
-    public void insertVehicleServiceCrossRef(com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef)
-com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl:
+    public void insertVehicleServiceCrossRef(servicetracker.data.VehicleServiceCrossRef)
+servicetracker.data.VehicleDatabase_Impl:
     public void clearAllTables()
-com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef:
+servicetracker.data.VehicleServiceCrossRef:
     public void <init>(long,long)
     public final long component1()
     public final long component2()
-    public final com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef copy(long,long)
-    public static synthetic com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef copy$default(com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef,long,long,int,java.lang.Object)
-com.staxxproducts.vehicleservicetracker.data.VehicleServiceRepo
-com.staxxproducts.vehicleservicetracker.data.VehicleViewModel:
+    public final servicetracker.data.VehicleServiceCrossRef copy(long,long)
+    public static synthetic servicetracker.data.VehicleServiceCrossRef copy$default(servicetracker.data.VehicleServiceCrossRef,long,long,int,java.lang.Object)
+servicetracker.data.VehicleServiceRepo
+servicetracker.data.VehicleViewModel:
     private androidx.lifecycle.LiveData vehicles
-    public final void deleteVehicleById(com.staxxproducts.vehicleservicetracker.data.Vehicle)
+    public final void deleteVehicleById(servicetracker.data.Vehicle)
     public final android.app.Application getApplication()
     public final java.lang.Object getVehicle(int,kotlin.coroutines.Continuation)
     public final java.lang.Object getVehicleAndService(int,kotlin.coroutines.Continuation)
     public final void insertService(java.util.List)
     public final void insertVehicle(java.util.List)
-    public final void insertVehicleServiceCrossRef(com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef)
+    public final void insertVehicleServiceCrossRef(servicetracker.data.VehicleServiceCrossRef)
     public final void setApplication(android.app.Application)
-com.staxxproducts.vehicleservicetracker.data.VehicleViewModelFactory:
+servicetracker.data.VehicleViewModelFactory:
     public final android.app.Application getApplication()
     public final void setApplication(android.app.Application)
 kotlin.ArrayIntrinsicsKt
@@ -31381,7 +31381,7 @@ com.google.android.material.shape.MaterialShapeUtils:
     public static final kotlinx.coroutines.Job launch(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.CoroutineContext,int,kotlin.jvm.functions.Function2)
     public static kotlinx.coroutines.Job launch$default(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.CoroutineContext,int,kotlin.jvm.functions.Function2,int,java.lang.Object)
     public static final java.util.Set optimizeReadOnlySet(java.util.Set)
-    public static final void setDb(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase)
+    public static final void setDb(servicetracker.data.VehicleDatabase)
     public static final java.util.Set setOf(java.lang.Object)
     public static void setParentAbsoluteElevation(android.view.View)
     public static final void startCoroutineUndispatched(kotlin.jvm.functions.Function2,java.lang.Object,kotlin.coroutines.Continuation)
@@ -31799,68 +31799,68 @@ com.google.android.material.transformation.FabTransformationScrimBehavior:
     public final void createScrimAnimation(android.view.View,boolean,boolean,java.util.List)
 com.google.android.material.transformation.FabTransformationSheetBehavior:
     public final void updateImportantForAccessibility(android.view.View,boolean)
-com.staxxproducts.vehicleservicetracker.About$$InternalSyntheticLambda$0$b5e1c5d967bf303d5e5df166e371eb4644cf673911ce52b2b256334a6da332bd$0:
+servicetracker.About$$InternalSyntheticLambda$0$b5e1c5d967bf303d5e5df166e371eb4644cf673911ce52b2b256334a6da332bd$0:
     private final void onClick$com$staxxproducts$vehicleservicetracker$About$$InternalSyntheticLambda$0$b5e1c5d967bf303d5e5df166e371eb4644cf673911ce52b2b256334a6da332bd$0(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$ExistingVehicle$$InternalSyntheticLambda$0$3316d8131c167dab9ca341b69fbd4c21a66590d9c376c996bec093108069b397$1(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$1(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$SingleService$$InternalSyntheticLambda$0$aa63c141d006917d42c5cd8c45a03a7951b2090970d393304f35aef4f6fec81b$0(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$1(android.view.View)
-com.staxxproducts.vehicleservicetracker.About$$InternalSyntheticLambda$0$b5e1c5d967bf303d5e5df166e371eb4644cf673911ce52b2b256334a6da332bd$1:
+servicetracker.About$$InternalSyntheticLambda$0$b5e1c5d967bf303d5e5df166e371eb4644cf673911ce52b2b256334a6da332bd$1:
     private final void onClick$com$staxxproducts$vehicleservicetracker$About$$InternalSyntheticLambda$0$b5e1c5d967bf303d5e5df166e371eb4644cf673911ce52b2b256334a6da332bd$1(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$AdminActivities$$InternalSyntheticLambda$0$191cfc8c873d31de129711efe93fbbb52dbf57c8042ddc686502d7c950184e9f$0(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$2(android.view.View)
-com.staxxproducts.vehicleservicetracker.About:
-    public static void $r8$lambda$2dApJCXWdsFqd4HdMbxCZMAxAb4(com.staxxproducts.vehicleservicetracker.About,android.view.View)
-    public static void $r8$lambda$9SQvn2EgGMc6T1K2Fq3NKfkobGs(com.staxxproducts.vehicleservicetracker.About,android.view.View)
-    public static final void onCreate$lambda-0(com.staxxproducts.vehicleservicetracker.About)
-    public static final void onCreate$lambda-1(com.staxxproducts.vehicleservicetracker.About)
-com.staxxproducts.vehicleservicetracker.AddRecord$onCreate$1$1:
+servicetracker.About:
+    public static void $r8$lambda$2dApJCXWdsFqd4HdMbxCZMAxAb4(servicetracker.About,android.view.View)
+    public static void $r8$lambda$9SQvn2EgGMc6T1K2Fq3NKfkobGs(servicetracker.About,android.view.View)
+    public static final void onCreate$lambda-0(servicetracker.About)
+    public static final void onCreate$lambda-1(servicetracker.About)
+servicetracker.AddRecord$onCreate$1$1:
     public final void invoke()
-com.staxxproducts.vehicleservicetracker.AddRecord:
-    public static void $r8$lambda$DWKBuO5f4ITjJBnWPz3YBAfmdQA(android.widget.DatePicker,android.widget.EditText,android.widget.EditText,android.widget.EditText,com.staxxproducts.vehicleservicetracker.AddRecord,android.view.View)
-    public static final void onCreate$lambda-0(android.widget.DatePicker,android.widget.EditText,android.widget.EditText,android.widget.EditText,com.staxxproducts.vehicleservicetracker.AddRecord)
-com.staxxproducts.vehicleservicetracker.AddVehicle$onCreate$1$1:
+servicetracker.AddRecord:
+    public static void $r8$lambda$DWKBuO5f4ITjJBnWPz3YBAfmdQA(android.widget.DatePicker,android.widget.EditText,android.widget.EditText,android.widget.EditText,servicetracker.AddRecord,android.view.View)
+    public static final void onCreate$lambda-0(android.widget.DatePicker,android.widget.EditText,android.widget.EditText,android.widget.EditText,servicetracker.AddRecord)
+servicetracker.AddVehicle$onCreate$1$1:
     public final void invoke()
-com.staxxproducts.vehicleservicetracker.AddVehicle:
-    public static void $r8$lambda$6kuFsokOpL1V0gdYmA2Bi0j8aow(com.staxxproducts.vehicleservicetracker.AddVehicle,android.widget.EditText,android.content.DialogInterface,int)
-    public static void $r8$lambda$nBk74kzVZv0i0MEqxdK-36PeHyM(com.staxxproducts.vehicleservicetracker.AddVehicle,android.widget.Spinner,android.widget.EditText,android.widget.EditText,android.view.View)
-    public static final synthetic java.lang.String access$getCurrentMileage$p(com.staxxproducts.vehicleservicetracker.AddVehicle)
-    public static final synthetic java.lang.String access$getDateString$p(com.staxxproducts.vehicleservicetracker.AddVehicle)
-    public static final synthetic java.lang.String access$getTypeOfService$p(com.staxxproducts.vehicleservicetracker.AddVehicle)
+servicetracker.AddVehicle:
+    public static void $r8$lambda$6kuFsokOpL1V0gdYmA2Bi0j8aow(servicetracker.AddVehicle,android.widget.EditText,android.content.DialogInterface,int)
+    public static void $r8$lambda$nBk74kzVZv0i0MEqxdK-36PeHyM(servicetracker.AddVehicle,android.widget.Spinner,android.widget.EditText,android.widget.EditText,android.view.View)
+    public static final synthetic java.lang.String access$getCurrentMileage$p(servicetracker.AddVehicle)
+    public static final synthetic java.lang.String access$getDateString$p(servicetracker.AddVehicle)
+    public static final synthetic java.lang.String access$getTypeOfService$p(servicetracker.AddVehicle)
     public final java.lang.String dateToString(java.util.Date,java.lang.String)
     public final java.lang.String getServiceNotes()
     public final java.util.List getYearRange(java.lang.String,java.lang.String)
-    public static final void onCreate$lambda-0(com.staxxproducts.vehicleservicetracker.AddVehicle,android.widget.Spinner,android.widget.EditText,android.widget.EditText)
+    public static final void onCreate$lambda-0(servicetracker.AddVehicle,android.widget.Spinner,android.widget.EditText,android.widget.EditText)
     public final void showDialog()
-    public static final void showDialog$lambda-1(com.staxxproducts.vehicleservicetracker.AddVehicle,android.widget.EditText)
-com.staxxproducts.vehicleservicetracker.AdminActivities$$InternalSyntheticLambda$0$191cfc8c873d31de129711efe93fbbb52dbf57c8042ddc686502d7c950184e9f$0
-com.staxxproducts.vehicleservicetracker.AdminActivities:
-    public static void $r8$lambda$mTRruEvuVxo81C8r2wppzNUvaYc(com.staxxproducts.vehicleservicetracker.AdminActivities,android.view.View)
-    public static final void onCreate$lambda-0(com.staxxproducts.vehicleservicetracker.AdminActivities)
-com.staxxproducts.vehicleservicetracker.AppKt
-com.staxxproducts.vehicleservicetracker.ExistingVehicle$$InternalSyntheticLambda$0$3316d8131c167dab9ca341b69fbd4c21a66590d9c376c996bec093108069b397$0
-com.staxxproducts.vehicleservicetracker.ExistingVehicle$$InternalSyntheticLambda$0$3316d8131c167dab9ca341b69fbd4c21a66590d9c376c996bec093108069b397$1
-com.staxxproducts.vehicleservicetracker.ExistingVehicle$onResume$1$swipeToDeleteCallback$1$onSwiped$1:
+    public static final void showDialog$lambda-1(servicetracker.AddVehicle,android.widget.EditText)
+servicetracker.AdminActivities$$InternalSyntheticLambda$0$191cfc8c873d31de129711efe93fbbb52dbf57c8042ddc686502d7c950184e9f$0
+servicetracker.AdminActivities:
+    public static void $r8$lambda$mTRruEvuVxo81C8r2wppzNUvaYc(servicetracker.AdminActivities,android.view.View)
+    public static final void onCreate$lambda-0(servicetracker.AdminActivities)
+servicetracker.AppKt
+servicetracker.ExistingVehicle$$InternalSyntheticLambda$0$3316d8131c167dab9ca341b69fbd4c21a66590d9c376c996bec093108069b397$0
+servicetracker.ExistingVehicle$$InternalSyntheticLambda$0$3316d8131c167dab9ca341b69fbd4c21a66590d9c376c996bec093108069b397$1
+servicetracker.ExistingVehicle$onResume$1$swipeToDeleteCallback$1$onSwiped$1:
     public final void invoke()
-com.staxxproducts.vehicleservicetracker.ExistingVehicle:
-    public static void $r8$lambda$2GKVoOPVE1ot_WQ60VpJCwRQHDc(com.staxxproducts.vehicleservicetracker.ExistingVehicle,java.util.List)
-    public static void $r8$lambda$ucFvRHLX6ulMSzkii3IIUeY0MZo(com.staxxproducts.vehicleservicetracker.ExistingVehicle,android.view.View)
-    public static final void onResume$lambda-0(com.staxxproducts.vehicleservicetracker.ExistingVehicle,java.util.List)
-    public static final void onResume$lambda-1(com.staxxproducts.vehicleservicetracker.ExistingVehicle)
+servicetracker.ExistingVehicle:
+    public static void $r8$lambda$2GKVoOPVE1ot_WQ60VpJCwRQHDc(servicetracker.ExistingVehicle,java.util.List)
+    public static void $r8$lambda$ucFvRHLX6ulMSzkii3IIUeY0MZo(servicetracker.ExistingVehicle,android.view.View)
+    public static final void onResume$lambda-0(servicetracker.ExistingVehicle,java.util.List)
+    public static final void onResume$lambda-1(servicetracker.ExistingVehicle)
     public final void setRecyclerView(androidx.recyclerview.widget.RecyclerView)
-com.staxxproducts.vehicleservicetracker.MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$0:
+servicetracker.MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$0:
     private final void onClick$com$staxxproducts$vehicleservicetracker$MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$0(android.view.View)
     private final void onClick$com$staxxproducts$vehicleservicetracker$MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$2(android.view.View)
-com.staxxproducts.vehicleservicetracker.MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$1
-com.staxxproducts.vehicleservicetracker.MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$2
-com.staxxproducts.vehicleservicetracker.MainActivity:
-    public static void $r8$lambda$2Rq0AVfIonUZjTN9QSBJnfy5Zls(com.staxxproducts.vehicleservicetracker.MainActivity,android.view.View)
-    public static void $r8$lambda$DVT4lhq-dRxxGKpbllRNkfJoUyo(com.staxxproducts.vehicleservicetracker.MainActivity,android.view.View)
-    public static void $r8$lambda$a6KwW8uT4CbCVR9tc47WEu0qXnw(com.staxxproducts.vehicleservicetracker.MainActivity,android.view.View)
-    public static final void onCreate$lambda-0(com.staxxproducts.vehicleservicetracker.MainActivity)
-    public static final void onCreate$lambda-1(com.staxxproducts.vehicleservicetracker.MainActivity)
-    public static final void onCreate$lambda-2(com.staxxproducts.vehicleservicetracker.MainActivity)
-com.staxxproducts.vehicleservicetracker.MainActivityKt:
+servicetracker.MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$1
+servicetracker.MainActivity$$InternalSyntheticLambda$0$a2dab6711e0830e60ca0213ecd0a78cb34b8189ae64c2debbd2375ac394094cf$2
+servicetracker.MainActivity:
+    public static void $r8$lambda$2Rq0AVfIonUZjTN9QSBJnfy5Zls(servicetracker.MainActivity,android.view.View)
+    public static void $r8$lambda$DVT4lhq-dRxxGKpbllRNkfJoUyo(servicetracker.MainActivity,android.view.View)
+    public static void $r8$lambda$a6KwW8uT4CbCVR9tc47WEu0qXnw(servicetracker.MainActivity,android.view.View)
+    public static final void onCreate$lambda-0(servicetracker.MainActivity)
+    public static final void onCreate$lambda-1(servicetracker.MainActivity)
+    public static final void onCreate$lambda-2(servicetracker.MainActivity)
+servicetracker.MainActivityKt:
     public static void <clinit>()
     public static final java.lang.String getServiceDate()
     public static final long getServiceId()
@@ -31874,111 +31874,111 @@ com.staxxproducts.vehicleservicetracker.MainActivityKt:
     public static final void setServiceNotes(java.lang.String)
     public static final void setServiceType(java.lang.String)
     public static final void setVehicleId(long)
-com.staxxproducts.vehicleservicetracker.SingleService$$InternalSyntheticLambda$0$aa63c141d006917d42c5cd8c45a03a7951b2090970d393304f35aef4f6fec81b$0
-com.staxxproducts.vehicleservicetracker.SingleService:
-    public static void $r8$lambda$NIQ2gkeSTM3Mml3G5kvNlGW2Fm0(com.staxxproducts.vehicleservicetracker.SingleService,android.view.View)
-    public static final void onCreate$lambda-0(com.staxxproducts.vehicleservicetracker.SingleService)
-com.staxxproducts.vehicleservicetracker.ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$0
-com.staxxproducts.vehicleservicetracker.ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$1
-com.staxxproducts.vehicleservicetracker.ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$2
-com.staxxproducts.vehicleservicetracker.ViewServices$onResume$1$swipeToDeleteCallback$1$onSwiped$1:
+servicetracker.SingleService$$InternalSyntheticLambda$0$aa63c141d006917d42c5cd8c45a03a7951b2090970d393304f35aef4f6fec81b$0
+servicetracker.SingleService:
+    public static void $r8$lambda$NIQ2gkeSTM3Mml3G5kvNlGW2Fm0(servicetracker.SingleService,android.view.View)
+    public static final void onCreate$lambda-0(servicetracker.SingleService)
+servicetracker.ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$0
+servicetracker.ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$1
+servicetracker.ViewServices$$InternalSyntheticLambda$0$de236566d1903b1af3b50dc98edb61c7056f8bbc05269a44069edc2ca58c0cfc$2
+servicetracker.ViewServices$onResume$1$swipeToDeleteCallback$1$onSwiped$1:
     public final void invoke()
-com.staxxproducts.vehicleservicetracker.ViewServices:
-    public static void $r8$lambda$-MmHGmBcmdNI7j0NX_FVvzsr_ow(com.staxxproducts.vehicleservicetracker.ViewServices,android.view.View)
-    public static void $r8$lambda$3xeqL0ehsy837Y37Ak0Qwr1ZNVQ(com.staxxproducts.vehicleservicetracker.ViewServices,java.util.List)
-    public static void $r8$lambda$QYmdU5J7TFoJ9ELPYccdjd04cto(com.staxxproducts.vehicleservicetracker.ViewServices,android.view.View)
-    public static final void onResume$lambda-0(com.staxxproducts.vehicleservicetracker.ViewServices,java.util.List)
-    public static final void onResume$lambda-1(com.staxxproducts.vehicleservicetracker.ViewServices)
-    public static final void onResume$lambda-2(com.staxxproducts.vehicleservicetracker.ViewServices)
+servicetracker.ViewServices:
+    public static void $r8$lambda$-MmHGmBcmdNI7j0NX_FVvzsr_ow(servicetracker.ViewServices,android.view.View)
+    public static void $r8$lambda$3xeqL0ehsy837Y37Ak0Qwr1ZNVQ(servicetracker.ViewServices,java.util.List)
+    public static void $r8$lambda$QYmdU5J7TFoJ9ELPYccdjd04cto(servicetracker.ViewServices,android.view.View)
+    public static final void onResume$lambda-0(servicetracker.ViewServices,java.util.List)
+    public static final void onResume$lambda-1(servicetracker.ViewServices)
+    public static final void onResume$lambda-2(servicetracker.ViewServices)
     public final void setRecyclerViewSvc(androidx.recyclerview.widget.RecyclerView)
-com.staxxproducts.vehicleservicetracker.data.Service:
+servicetracker.data.Service:
     public final java.lang.String getServiceDate()
     public final java.lang.Long getServiceId()
     public final java.lang.String getServiceMiles()
     public final java.lang.String getServiceNotes()
     public final java.lang.String getServiceType()
     public final java.lang.Long getVehicleId()
-com.staxxproducts.vehicleservicetracker.data.ServiceAdapter$ViewHolder:
+servicetracker.data.ServiceAdapter$ViewHolder:
     public final android.widget.TextView getTextView()
-com.staxxproducts.vehicleservicetracker.data.ServiceAdapter:
+servicetracker.data.ServiceAdapter:
     public final java.util.List list
-    public void onBindViewHolder(com.staxxproducts.vehicleservicetracker.data.ServiceAdapter$ViewHolder,int)
-    public com.staxxproducts.vehicleservicetracker.data.ServiceAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
-com.staxxproducts.vehicleservicetracker.data.ServiceViewModel:
+    public void onBindViewHolder(servicetracker.data.ServiceAdapter$ViewHolder,int)
+    public servicetracker.data.ServiceAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
+servicetracker.data.ServiceViewModel:
     public android.app.Application application
     public final androidx.lifecycle.LiveData getAllVehicles
     public androidx.lifecycle.LiveData getService
     public final androidx.lifecycle.LiveData getGetAllVehicleServices$app_release()
-com.staxxproducts.vehicleservicetracker.data.ServiceViewModelFactory:
+servicetracker.data.ServiceViewModelFactory:
     private void $r8$constructor$com$staxxproducts$vehicleservicetracker$data$ServiceViewModelFactory(android.app.Application)
     private void $r8$constructor$com$staxxproducts$vehicleservicetracker$data$VehicleViewModelFactory(android.app.Application)
     private androidx.lifecycle.ViewModel create$com$staxxproducts$vehicleservicetracker$data$ServiceViewModelFactory(java.lang.Class)
     private androidx.lifecycle.ViewModel create$com$staxxproducts$vehicleservicetracker$data$VehicleViewModelFactory(java.lang.Class)
-com.staxxproducts.vehicleservicetracker.data.Vehicle:
+servicetracker.data.Vehicle:
     public final java.lang.Long getVehicleId()
     public final java.lang.String getVehicleMake()
     public final java.lang.String getVehicleModel()
     public final java.lang.String getVehicleYear()
-com.staxxproducts.vehicleservicetracker.data.VehicleAdapter$ViewHolder:
+servicetracker.data.VehicleAdapter$ViewHolder:
     public final android.widget.TextView getTextView()
-com.staxxproducts.vehicleservicetracker.data.VehicleAdapter:
+servicetracker.data.VehicleAdapter:
     public final java.util.List list
-    public void onBindViewHolder(com.staxxproducts.vehicleservicetracker.data.VehicleAdapter$ViewHolder,int)
-    public com.staxxproducts.vehicleservicetracker.data.VehicleAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$11:
+    public void onBindViewHolder(servicetracker.data.VehicleAdapter$ViewHolder,int)
+    public servicetracker.data.VehicleAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup)
+servicetracker.data.VehicleDao_Impl$11:
     public java.util.List call()
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$1:
-    public final synthetic com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl this$0
-    public void bind(androidx.sqlite.db.SupportSQLiteStatement,com.staxxproducts.vehicleservicetracker.data.Vehicle)
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$2:
-    public final synthetic com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl this$0
-    public void bind(androidx.sqlite.db.SupportSQLiteStatement,com.staxxproducts.vehicleservicetracker.data.Service)
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$3
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$4:
-    public final synthetic com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl this$0
-    public void bind(androidx.sqlite.db.SupportSQLiteStatement,com.staxxproducts.vehicleservicetracker.data.Service)
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$5:
-    public final synthetic com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl this$0
-    public void bind(androidx.sqlite.db.SupportSQLiteStatement,com.staxxproducts.vehicleservicetracker.data.Vehicle)
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$6
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$8:
+servicetracker.data.VehicleDao_Impl$1:
+    public final synthetic servicetracker.data.VehicleDao_Impl this$0
+    public void bind(androidx.sqlite.db.SupportSQLiteStatement,servicetracker.data.Vehicle)
+servicetracker.data.VehicleDao_Impl$2:
+    public final synthetic servicetracker.data.VehicleDao_Impl this$0
+    public void bind(androidx.sqlite.db.SupportSQLiteStatement,servicetracker.data.Service)
+servicetracker.data.VehicleDao_Impl$3
+servicetracker.data.VehicleDao_Impl$4:
+    public final synthetic servicetracker.data.VehicleDao_Impl this$0
+    public void bind(androidx.sqlite.db.SupportSQLiteStatement,servicetracker.data.Service)
+servicetracker.data.VehicleDao_Impl$5:
+    public final synthetic servicetracker.data.VehicleDao_Impl this$0
+    public void bind(androidx.sqlite.db.SupportSQLiteStatement,servicetracker.data.Vehicle)
+servicetracker.data.VehicleDao_Impl$6
+servicetracker.data.VehicleDao_Impl$8:
     public java.util.List call()
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl$9:
+servicetracker.data.VehicleDao_Impl$9:
     public java.util.List call()
-com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl:
+servicetracker.data.VehicleDao_Impl:
     public final androidx.room.EntityDeletionOrUpdateAdapter __insertionAdapterOfVehicleServiceCrossRef
     public final androidx.room.SharedSQLiteStatement __preparedStmtOfDeleteVehicle
-    public static synthetic androidx.room.RoomDatabase access$000(com.staxxproducts.vehicleservicetracker.data.VehicleDao_Impl)
+    public static synthetic androidx.room.RoomDatabase access$000(servicetracker.data.VehicleDao_Impl)
     public static java.util.List getRequiredConverters()
-com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_AutoMigration_1_2_Impl:
+servicetracker.data.VehicleDatabase_AutoMigration_1_2_Impl:
     private void $r8$constructor$com$staxxproducts$vehicleservicetracker$data$VehicleDatabase_AutoMigration_1_2_Impl()
     private void $r8$constructor$com$staxxproducts$vehicleservicetracker$data$VehicleDatabase_AutoMigration_3_4_Impl()
     private void migrate$com$staxxproducts$vehicleservicetracker$data$VehicleDatabase_AutoMigration_1_2_Impl(androidx.sqlite.db.SupportSQLiteDatabase)
     private void migrate$com$staxxproducts$vehicleservicetracker$data$VehicleDatabase_AutoMigration_3_4_Impl(androidx.sqlite.db.SupportSQLiteDatabase)
-com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_AutoMigration_3_4_Impl
-com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl$1:
+servicetracker.data.VehicleDatabase_AutoMigration_3_4_Impl
+servicetracker.data.VehicleDatabase_Impl$1:
     public void dropAllTables(androidx.sqlite.db.SupportSQLiteDatabase)
     public void onCreate(androidx.sqlite.db.SupportSQLiteDatabase)
     public void onOpen(androidx.sqlite.db.SupportSQLiteDatabase)
     public void onPostMigrate(androidx.sqlite.db.SupportSQLiteDatabase)
     public void onPreMigrate(androidx.sqlite.db.SupportSQLiteDatabase)
-com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl:
-    public static synthetic java.util.List access$000(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$100(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$1000(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$200(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$300(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$400(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$500(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic androidx.sqlite.db.SupportSQLiteDatabase access$602(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
-    public static void access$700(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
-    public static synthetic java.util.List access$800(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-    public static synthetic java.util.List access$900(com.staxxproducts.vehicleservicetracker.data.VehicleDatabase_Impl)
-com.staxxproducts.vehicleservicetracker.data.VehicleServiceCrossRef
-com.staxxproducts.vehicleservicetracker.data.VehicleViewModel:
+servicetracker.data.VehicleDatabase_Impl:
+    public static synthetic java.util.List access$000(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$100(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$1000(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$200(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$300(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$400(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$500(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic androidx.sqlite.db.SupportSQLiteDatabase access$602(servicetracker.data.VehicleDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
+    public static void access$700(servicetracker.data.VehicleDatabase_Impl,androidx.sqlite.db.SupportSQLiteDatabase)
+    public static synthetic java.util.List access$800(servicetracker.data.VehicleDatabase_Impl)
+    public static synthetic java.util.List access$900(servicetracker.data.VehicleDatabase_Impl)
+servicetracker.data.VehicleServiceCrossRef
+servicetracker.data.VehicleViewModel:
     public android.app.Application application
     public final androidx.lifecycle.LiveData getGetAllVehicles$app_release()
-com.staxxproducts.vehicleservicetracker.data.VehicleViewModelFactory
+servicetracker.data.VehicleViewModelFactory
 kotlin.ExceptionsKt
 kotlin.ExceptionsKt__ExceptionsKt
 kotlin.Function

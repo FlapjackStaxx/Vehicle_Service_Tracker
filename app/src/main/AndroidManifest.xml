@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.staxxproducts.vehicleservicetracker">
+    package="servicetracker">
 
     <application
         android:allowBackup="true"
-        android:name=".App"
+        android:name="com.staxxproducts.servicetracker.App"
         android:usesCleartextTraffic="true"
 
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +14,7 @@
         android:theme="@style/Theme.VehicleServiceTracker"
         >
         <activity
-            android:name=".MainActivity"
+            android:name="com.staxxproducts.servicetracker.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
 
@@ -26,20 +26,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddVehicle"
+            android:name="com.staxxproducts.servicetracker.AddVehicle"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait" />
-        <activity android:name=".ExistingVehicle"
+        <activity android:name="com.staxxproducts.servicetracker.ExistingVehicle"
             android:screenOrientation="portrait" />
-        <activity android:name=".About"
+        <activity android:name="com.staxxproducts.servicetracker.About"
             android:screenOrientation="portrait" />
-        <activity android:name=".AddRecord"
+        <activity android:name="com.staxxproducts.servicetracker.AddRecord"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViewServices"
+        <activity android:name="com.staxxproducts.servicetracker.ViewServices"
             android:screenOrientation="portrait" />
-        <activity android:name=".AdminActivities"
+        <activity android:name="com.staxxproducts.servicetracker.AdminActivities"
             android:screenOrientation="portrait" />
-        <activity android:name=".SingleService"
+        <activity android:name="com.staxxproducts.servicetracker.SingleService"
             android:screenOrientation="portrait" />
     </application>
 

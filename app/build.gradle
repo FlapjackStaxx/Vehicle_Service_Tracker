@@ -2,18 +2,20 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+/*
     id 'com.google.gms.google-services'
+*/
 }
 
 android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.staxxproducts.vehicleservicetracker"
+        applicationId "com.staxxproducts.servicetracker"
         minSdk 29
         targetSdk 31
-        versionCode 2
-        versionName "1.0 Beta"
+        versionCode 3
+        versionName "1.1 Beta"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         kapt {
@@ -58,16 +60,16 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.2"
 
     // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
     // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
 
-    // Firebase
+/*    // Firebase
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0-beta04'
+    implementation 'com.google.firebase:firebase-appcheck-safetynet:16.0.0-beta04'*/
 
 }

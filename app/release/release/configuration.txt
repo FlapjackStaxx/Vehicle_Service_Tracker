@@ -145,15 +145,15 @@
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class androidx.room.MultiInstanceInvalidationService { <init>(); }
 -keep class androidx.startup.InitializationProvider { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.About { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.AddRecord { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.AddVehicle { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.AdminActivities { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.App { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.ExistingVehicle { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.MainActivity { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.SingleService { <init>(); }
--keep class com.staxxproducts.vehicleservicetracker.ViewServices { <init>(); }
+-keep class servicetracker.About { <init>(); }
+-keep class servicetracker.AddRecord { <init>(); }
+-keep class servicetracker.AddVehicle { <init>(); }
+-keep class servicetracker.AdminActivities { <init>(); }
+-keep class servicetracker.App { <init>(); }
+-keep class servicetracker.ExistingVehicle { <init>(); }
+-keep class servicetracker.MainActivity { <init>(); }
+-keep class servicetracker.SingleService { <init>(); }
+-keep class servicetracker.ViewServices { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(android.content.Context, android.util.AttributeSet); }
