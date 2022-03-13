@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "1052887944001",
-    "project_id": "vehicle-maintenance-tracker3",
-    "storage_bucket": "vehicle-maintenance-tracker3.appspot.com"
+    "project_number": "401269109654",
+    "project_id": "vehicle-service-tracker-ff880",
+    "storage_bucket": "vehicle-service-tracker-ff880.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1052887944001:android:9a7adbd5b88c1acba8efc0",
+        "mobilesdk_app_id": "1:401269109654:android:4d0eb79826f1c821c523b7",
         "android_client_info": {
-          "package_name": "com.staxxproducts.vehicleservicetracker"
+          "package_name": "com.staxxproducts.servicetracker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1052887944001-3f5fhmbthuoc1iko6hmeiovjq0ge2sec.apps.googleusercontent.com",
+          "client_id": "401269109654-7b8me719pperqa8v58g4nm7fodfqh6om.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.staxxproducts.vehicleservicetracker",
-            "certificate_hash": "21e26b255545a15b2379b3812bad9ee0ce1e45d3"
+            "package_name": "com.staxxproducts.servicetracker",
+            "certificate_hash": "b49c713598e2122d55e5338b6748045938944642"
           }
         },
         {
-          "client_id": "1052887944001-rjv6gholr8q5bcp9b9j335d99jaq0dd0.apps.googleusercontent.com",
+          "client_id": "401269109654-cm1vid5k09ab77f9on6v4ok9gker4l9k.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB-pwQ0574l3kT6KocovbM_fIA-ISxK0js"
+          "current_key": "AIzaSyDt-M8EvwsLP_8ST2o23D9SInp-JXMjEjU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1052887944001-rjv6gholr8q5bcp9b9j335d99jaq0dd0.apps.googleusercontent.com",
+              "client_id": "401269109654-cm1vid5k09ab77f9on6v4ok9gker4l9k.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
